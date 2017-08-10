@@ -29,16 +29,16 @@ export namespace Mono {
 }
 
 const appDir = appRootDir.get()
-let packageJSON
+let pkg
 try {
-	packageJSON = require(join(appDir, 'package.json'))
+	pkg = require(join(appDir, 'package.json'))
 } catch (err) {
 	// tslint:disable-next-line:no-console
 	console.error(`[mono] Could not find package.json in application directory ${appDir}`)
 	process.exit(1)
 }
 
-export let log: MonoLog = new MonoLog(packageJSON.name || 'mono')
+export let log: MonoLog = new MonoLog(pkg.name || 'mono')
 export let conf: any = {}
 export const HttpError = HttpErrorClass
 export const utils = allUtils
@@ -49,7 +49,7 @@ export default async function(srcDir?: string): Promise<Mono.Context> {
 	// Provides a stack trace for unhandled rejections instead of the default message string.
 	process.on('unhandledRejection', handleThrow)
 	// Load configuration
-	conf = loadConf.call({ log, packageJSON, appDir }, srcDir)
+	conf = loadConf.call({ log, pkg, appDir }, srcDir)
 	// Load logs
 	log = new MonoLog(conf.name, conf.mono.log)
 	log.profile('startup')
@@ -60,7 +60,7 @@ export default async function(srcDir?: string): Promise<Mono.Context> {
 	// Add JWT middleware (add req.generateJWT & req.loadSession)
 	jwtMiddleware(conf.mono.jwt, app)
 	// Init every modules
-	await initModules.call({ log, conf, appDir, packageJSON }, srcDir, { app, server })
+	await initModules.call({ log, conf, appDir, pkg }, srcDir, { app, server })
 	// Load routes
 	await loadRoutes.call({ log, conf, appDir }, srcDir, app)
 	// Make the server listen
