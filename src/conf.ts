@@ -1,5 +1,5 @@
 import { existsSync } from 'fs'
-import { join } from 'path'
+import { join, dirname } from 'path'
 import { isArray, isObject, isRegExp, mergeWith, isUndefined } from 'lodash'
 
 import { MonoLog } from './log'
@@ -18,7 +18,14 @@ function defaultOptions(conf) {
 	conf.mono.modules = conf.mono.modules || []
 	conf.mono.modules = conf.mono.modules.map((path) => {
 		// If path is not an absolute paht but a node module
-		if (['.', '/'].indexOf(path[0]) === -1) path = join(this.appDir, 'node_modules', path)
+		if (['.', '/'].indexOf(path[0]) === -1) {
+			path = join(this.appDir, 'node_modules', path)
+			try {
+				const pkg = require(join(path, 'package.json'))
+				if (pkg.main) path = join(path, (pkg.main.slice(-1) === '/' ? pkg.main : dirname(pkg.main)))
+				// tslint:disable-next-line:no-empty
+			} catch (err) {}
+		}
 		// If relative path, make it absolute from srcDir
 		if (path[0] === '.') path = join(this.srcDir, path)
 		// Return new path
@@ -68,8 +75,8 @@ export default function(srcDir?: string): any {
 	// Add env, name & version to the returned config
 	sources.push({
 		env,
-		name: this.packageJSON.name,
-		version: this.packageJSON.version
+		name: this.pkg.name,
+		version: this.pkg.version
 	})
 	// Merged sources with conf
 	const conf = mergeWith.apply(null, [...sources, customizer])
