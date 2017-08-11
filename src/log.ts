@@ -64,7 +64,7 @@ export class MonoLog {
 		this.verbose = this.log.verbose.bind(this.log)
 		this.profile = this.log.profile.bind(this.log)
 		// Add stream for morgan middleware
-		this.stream = { write: (message) => this.debug(message) }
+		this.stream = { write: (message) => this.debug(message.replace(/\n$/, '')) } // remove \n added by morgan at the end
 	}
 
 	public module(name: string) {
