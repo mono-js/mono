@@ -53,6 +53,7 @@ export class MonoLog {
 		this.options.console = (typeof this.options.console === 'boolean' ? this.options.console : true)
 		this.options.files = this.options.files || []
 		this.options.http = this.options.http || []
+		this.options.transports = this.options.transports || []
 		// Logger
 		this.log = this.createLogger(this.level)
 		// Add methods
