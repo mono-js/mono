@@ -127,7 +127,6 @@ export class MonoLog {
 			)
 		})
 		// Add custom transports
-		this.options.transports = this.options.transports || []
 		this.options.transports.forEach((transport) => {
 			transports.push(transport)
 		})
