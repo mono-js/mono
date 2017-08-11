@@ -12,7 +12,8 @@ import { MonoLog } from './log'
 export namespace MonoHttp {
 	export interface Options {
 		logLevel?: string | false
-		port?: number | string
+		port?: number,
+		host?: string
 	}
 	export interface Context {
 		app: Express
@@ -23,8 +24,9 @@ export namespace MonoHttp {
 
 export default async function(options: MonoHttp.Options): Promise<MonoHttp.Context> {
 	// Default options
-	options.port = options.port || process.env.PORT || 5000
+	const port: number | string = process.env.PORT || options.port || 5000
 	options.logLevel = (typeof options.logLevel !== 'undefined' ? options.logLevel : 'dev')
+	options.host = process.env.HOST || options.host || 'localhost'
 	// Create server & helpers
 	const app = express()
 	const server = createServer(app)
@@ -52,7 +54,7 @@ export default async function(options: MonoHttp.Options): Promise<MonoHttp.Conte
 	// Listen method
 	const listen = () => {
 		return new Promise((resolve, reject) => {
-			server.listen(options.port)
+			server.listen(port, options.host)
 			server.on('error', (error) => {
 				reject(analyzeError(error))
 			})
