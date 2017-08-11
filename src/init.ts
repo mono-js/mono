@@ -2,7 +2,7 @@ import { join } from 'path'
 import { statSync } from 'fs'
 import * as glob from 'glob-promise'
 
-export default async function(srcDir: string, { app, server }) {
+export default async function (srcDir: string, { app, server }) {
 	let initFiles = []
 	// Add mono modules (conf.mono.modules) to initFiles
 	this.conf.mono.modules.forEach((path: string) => {
@@ -12,7 +12,7 @@ export default async function(srcDir: string, { app, server }) {
 			// Add it to the list only if exists
 			initFiles.push(path)
 			// tslint:disable-next-line:no-empty
-		} catch (err) {}
+		} catch (err) { }
 	})
 	// Project modules (**/*.init.js)
 	initFiles = initFiles.concat(await glob('modules/**/*.init.+(ts|js)', { cwd: srcDir }))

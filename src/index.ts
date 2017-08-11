@@ -44,7 +44,7 @@ export const HttpError = HttpErrorClass
 export const utils = allUtils
 export const acl: Imperium = imperium
 
-export default async function(srcDir?: string): Promise<Mono.Context> {
+export default async function (srcDir?: string): Promise<Mono.Context> {
 	srcDir = srcDir || appDir
 	// Provides a stack trace for unhandled rejections instead of the default message string.
 	process.on('unhandledRejection', handleThrow)
@@ -77,7 +77,7 @@ async function bootMonoModules(modules: string[]) {
 			module = require(path)
 			module = module.default || module
 			// tslint:disable-next-line:no-empty
-		} catch (err) {}
+		} catch (err) { }
 		if (typeof module !== 'function') return
 		const moduleName = path.split('/').slice(-1)[0]
 		log.debug(`Boot ${moduleName} mono module`)

@@ -24,7 +24,7 @@ function defaultOptions(conf) {
 				const pkg = require(join(path, 'package.json'))
 				if (pkg.main) path = join(path, (pkg.main.slice(-1) === '/' ? pkg.main : dirname(pkg.main)))
 				// tslint:disable-next-line:no-empty
-			} catch (err) {}
+			} catch (err) { }
 		}
 		// If relative path, make it absolute from srcDir
 		if (path[0] === '.') path = join(this.srcDir, path)
@@ -41,7 +41,7 @@ function defaultOptions(conf) {
 	return conf
 }
 
-export default function(srcDir?: string): any {
+export default function (srcDir?: string): any {
 	// Environement
 	const env: string = process.env.NODE_ENV || 'development'
 	// Conf path

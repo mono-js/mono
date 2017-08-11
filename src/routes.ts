@@ -20,7 +20,7 @@ validate.options({
 	allowUnknownCookies: true
 })
 
-export default async function(srcDir: string, app: Express) {
+export default async function (srcDir: string, app: Express) {
 	// Fetch application name
 	const log = this.log
 	// Create the routes list
@@ -52,7 +52,7 @@ export default async function(srcDir: string, app: Express) {
 			// Add it to the list only if exists
 			routeFiles.push(path)
 			// tslint:disable-next-line:no-empty
-		} catch (err) {}
+		} catch (err) { }
 	})
 	// Find every module which export .routes.ts file
 	routeFiles = routeFiles.concat(await glob('modules/**/*.routes.+(ts|js)', { cwd: srcDir }))

@@ -1,5 +1,4 @@
-import imperium, { Imperium } from '@terrajs/imperium'
+import imperium, { Imperium, UnauthorizedError } from '@terrajs/imperium'
 
-export type Imperium = Imperium
-
+export { Imperium, UnauthorizedError }
 export default imperium
