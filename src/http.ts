@@ -21,7 +21,7 @@ export namespace MonoHttp {
 	}
 }
 
-export default async function(options: MonoHttp.Options): Promise<MonoHttp.Context> {
+export default async function (options: MonoHttp.Options): Promise<MonoHttp.Context> {
 	// Default options
 	options.port = options.port || process.env.PORT || 5000
 	options.logLevel = (typeof options.logLevel !== 'undefined' ? options.logLevel : 'dev')

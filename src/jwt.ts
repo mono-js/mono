@@ -65,7 +65,7 @@ function sanitizeToken(token: string) {
 	return token
 }
 
-export default function(options: MonoJWT.Options, app) {
+export default function (options: MonoJWT.Options, app) {
 	options.headerKey = options.headerKey || 'Authorization'
 	options.secret = options.secret || 'secret'
 	options.expiresIn = options.expiresIn || '7d'
