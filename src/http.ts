@@ -24,7 +24,7 @@ export namespace MonoHttp {
 
 export default async function (options: MonoHttp.Options): Promise<MonoHttp.Context> {
 	// Default options
-	const port: number | string = process.env.PORT || options.port || 5000
+	const port: number = parseInt(process.env.PORT, 10) || options.port || 5000
 	options.logLevel = (typeof options.logLevel !== 'undefined' ? options.logLevel : 'dev')
 	options.host = process.env.HOST || options.host || 'localhost'
 	// Create server & helpers
