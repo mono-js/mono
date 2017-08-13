@@ -195,7 +195,7 @@ export default async function (srcDir: string, app: Express) {
 				code,
 				status,
 				context,
-				error: err
+				error: (err instanceof HttpError ? err : undefined)
 			})
 		})
 	}
