@@ -71,8 +71,8 @@ export default function (options: MonoJWT.Options, app) {
 	options.expiresIn = options.expiresIn || '7d'
 	// Add first middleware to add JWT support
 	app.use((req, res, next) => {
-		req.generateJWT = generateJWT.bind(options, req)
-		req.loadSession = loadSession.bind(options, req)
+		req.generateJWT = generateJWT.bind({ jwt: options }, req)
+		req.loadSession = loadSession.bind({ jwt: options }, req)
 		next()
 	})
 }
