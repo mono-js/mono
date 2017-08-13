@@ -44,9 +44,9 @@
   dependencies:
     arrify "^1.0.1"
 
-"@terrajs/imperium@^0.1.1":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@terrajs/imperium/-/imperium-0.1.3.tgz#0658ae6d676346a870de56fb7ac4c14ee27ac5f0"
+"@terrajs/imperium@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@terrajs/imperium/-/imperium-1.0.0.tgz#6e11e6407c2e1af73598dd2d7711f9b2c8d093c4"
   dependencies:
     lodash "^4.17.4"
 
@@ -79,10 +79,6 @@
   resolved "https://registry.yarnpkg.com/@types/helmet/-/helmet-0.0.35.tgz#b5f035063180c2c1f43122aba2612c9ed9466dc0"
   dependencies:
     "@types/express" "*"
-
-"@types/joi@^10.4.0":
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/@types/joi/-/joi-10.4.0.tgz#a4de40cdf2462c7e1c83eb47ca3e19177bcc2ae8"
 
 "@types/jsonwebtoken@^7.2.2":
   version "7.2.3"
@@ -1736,10 +1732,6 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoek@4.x.x:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
-
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -2013,10 +2005,6 @@ isemail@1.x.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/isemail/-/isemail-1.2.0.tgz#be03df8cc3e29de4d2c5df6501263f1fa4595e9a"
 
-isemail@2.x.x:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/isemail/-/isemail-2.2.1.tgz#0353d3d9a62951080c262c2aa0a42b8ea8e9e2a6"
-
 isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
@@ -2078,22 +2066,9 @@ istanbul-reports@^1.1.1:
   dependencies:
     handlebars "^4.0.3"
 
-items@2.x.x:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/items/-/items-2.1.1.tgz#8bd16d9c83b19529de5aea321acaada78364a198"
-
 joi-to-json-schema@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/joi-to-json-schema/-/joi-to-json-schema-3.0.0.tgz#06b0d310a9d2098e2dcce1747c58dfbc593f663f"
-
-joi@^10.6.0:
-  version "10.6.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-10.6.0.tgz#52587f02d52b8b75cdb0c74f0b164a191a0e1fc2"
-  dependencies:
-    hoek "4.x.x"
-    isemail "2.x.x"
-    items "2.x.x"
-    topo "2.x.x"
 
 joi@^6.10.1:
   version "6.10.1"
@@ -3472,12 +3447,6 @@ topo@1.x.x:
   resolved "https://registry.yarnpkg.com/topo/-/topo-1.1.0.tgz#e9d751615d1bb87dc865db182fa1ca0a5ef536d5"
   dependencies:
     hoek "2.x.x"
-
-topo@2.x.x:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/topo/-/topo-2.0.2.tgz#cd5615752539057c0dc0491a621c3bc6fbe1d182"
-  dependencies:
-    hoek "4.x.x"
 
 tough-cookie@>=2.3.0, tough-cookie@~2.3.0:
   version "2.3.2"
