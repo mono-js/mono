@@ -225,7 +225,7 @@ function versionning(version) {
 		// Force version to be an array
 		version = (!Array.isArray(version) ? [version] : version)
 		// Check if param version is matching the route version(s)
-		if (version.includes(req.params.version)) {
+		if (version.includes(req.params.version || req.headers['api-version'])) {
 			return next()
 		}
 		next(new HttpError('version-not-supported', 400, { version }))
