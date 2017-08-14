@@ -126,7 +126,7 @@ export default async function (srcDir: string, app: Express) {
 			}
 			// Check ACL actions
 			if (r.can) {
-				handler.push(acl.can(r.acl))
+				handler.push(acl.can(r.can))
 			}
 			// Add validation middleware validate schema defined (3rd)
 			if (r.validate) {
