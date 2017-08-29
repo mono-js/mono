@@ -48,7 +48,6 @@ export class MonoLog {
 		this.options = options || {}
 		// Options
 		this.name = name
-		// tslint:disable-next-line:no-console
 		this.level = process.env.MONO_LOG_LEVEL || this.options.level || 'verbose'
 		this.options.console = (typeof this.options.console === 'boolean' ? this.options.console : true)
 		this.options.files = this.options.files || []
