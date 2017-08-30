@@ -7,10 +7,16 @@
   "files": [
     "dist/src"
   ],
+  "nyc": {
+    "include": [
+      "dist/src/"
+    ]
+  },
   "scripts": {
     "build": "rimraf dist/ && tsc",
     "lint": "tslint src/*.ts",
-    "test": "npm run lint && npm run build && nyc --reporter=lcov ava --verbose --serial dist/test/",
+    "test": "npm run lint && npm run build && nyc ava --verbose --serial dist/test/ && nyc report --reporter=html",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "preversion": "npm test",
     "prepublish": "npm run build"
   },
@@ -50,6 +56,7 @@
     "@types/node": "^8.0.20",
     "@types/winston": "^2.3.4",
     "ava": "^0.21.0",
+    "codecov": "^2.3.0",
     "nyc": "^11.1.0",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.4",

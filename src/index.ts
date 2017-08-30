@@ -8,10 +8,10 @@ import httpServer, { MonoHttp } from './http'
 import initModules from './init'
 import loadRoutes from './routes'
 import jwtMiddleware, { MonoJWT } from './jwt'
-import imperium, { Imperium } from './acl'
+import imperium, { Imperium, UnauthorizedError } from '@terrajs/imperium'
 
-import HttpErrorClass from './http-error'
-import * as allUtils from './utils'
+import HttpError from './http-error'
+import * as utils from './utils'
 import loadConf from './conf'
 import { MonoLog } from './log'
 
@@ -40,9 +40,8 @@ try {
 
 export let log: MonoLog = new MonoLog(pkg.name || 'mono')
 export let conf: any = {}
-export const HttpError = HttpErrorClass
-export const utils = allUtils
 export const acl: Imperium = imperium
+export { HttpError, UnauthorizedError, utils }
 
 export default async function (srcDir?: string): Promise<Mono.Context> {
 	srcDir = srcDir || appDir

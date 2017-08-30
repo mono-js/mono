@@ -6,8 +6,7 @@ import * as glob from 'glob-promise'
 import { Router, Express } from 'express'
 
 import HttpError from './http-error'
-import { Mono } from './index'
-import acl from './acl'
+import { Mono, acl } from './index'
 
 const METHODS = ['get', 'post', 'put', 'delete', 'head', 'patch', 'all']
 
