@@ -81,7 +81,7 @@ All these files should export an `Object`, to configure Mono, use the `mono` pro
 ## Getters
 
 ```js
-const { conf, log, acl, HttpError, db, es } = require('@terrajs/mono')
+const { conf, log, acl, HttpError } = require('@terrajs/mono')
 ```
 
 ## Utils
