@@ -42,6 +42,7 @@ export let log: MonoLog = new MonoLog(pkg.name || 'mono')
 export let conf: any = {}
 export const acl: Imperium = imperium
 export { HttpError, UnauthorizedError, utils }
+export { jwt } from './jwt'
 
 export default async function (srcDir?: string): Promise<Mono.Context> {
 	srcDir = srcDir || appDir

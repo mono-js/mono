@@ -1,4 +1,4 @@
-import * as jwt from 'jsonwebtoken'
+import * as jsonwebtoken from 'jsonwebtoken'
 import HttpError from './http-error'
 import { cb } from './utils'
 
@@ -10,14 +10,14 @@ export namespace MonoJWT {
 	}
 }
 
-async function generateJWT(req, session: any): Promise<string> {
+async function generateJWT(session: any): Promise<string> {
 	if (!session) {
 		throw new HttpError('session-is-empty', 400)
 	}
 	if (!session.userId) {
 		throw new HttpError('session-has-no-userId', 400)
 	}
-	return await cb(jwt.sign, session, this.jwt.secret, { expiresIn: this.jwt.expiresIn })
+	return await cb(jsonwebtoken.sign, session, this.jwt.secret, { expiresIn: this.jwt.expiresIn })
 }
 
 /*
@@ -45,7 +45,7 @@ async function loadSession(req, getToken?: (req) => string): Promise<void> {
 	// Verify token
 	let session
 	try {
-		session = await cb(jwt.verify, token, this.jwt.secret)
+		session = await cb(jsonwebtoken.verify, token, this.jwt.secret)
 	} catch (err) {
 		throw new HttpError('invalid-token', 401)
 	}
@@ -65,13 +65,22 @@ function sanitizeToken(token: string) {
 	return token
 }
 
+export const jwt = {
+	generateJWT,
+	loadSession
+}
+
 export default function (options: MonoJWT.Options, app) {
+	// Set default options
 	options.headerKey = options.headerKey || 'Authorization'
 	options.secret = options.secret || 'secret'
 	options.expiresIn = options.expiresIn || '7d'
+	// Bing jwt methods
+	jwt.generateJWT = generateJWT.bind({ jwt: options })
+	jwt.loadSession = loadSession.bind({ jwt: options })
 	// Add first middleware to add JWT support
 	app.use((req, res, next) => {
-		req.generateJWT = generateJWT.bind({ jwt: options }, req)
+		req.generateJWT = generateJWT.bind({ jwt: options })
 		req.loadSession = loadSession.bind({ jwt: options }, req)
 		next()
 	})
