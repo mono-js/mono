@@ -18,7 +18,7 @@ npm install --save @terrajs/mono
 - Configuration based on environment
 - Easy API Versionning (`v1`, `v2`...)
 - Sessions with [Json Web Token](https://jwt.io)
-- ACL with [imperium](https://github.com/benjamincanac/imperium)
+- ACL with [imperium](https://github.com/terrajs/imperium)
 - Routes validation with [joi](https://github.com/hapijs/joi)
 - Init modules via `modules/**/*.init.js`
 - Routes declaration via `modules/**/*.routes.js`
