@@ -92,5 +92,12 @@ const { conf, log, acl, jwt, HttpError } = require('@terrajs/mono')
 ## Utils
 
 ```js
-const { ok, cb, waitFor, waitForEvent, asyncObject } = require('@terrajs/mono/utils')
+const { utils } = require('@terrajs/mono')
 ```
+
+Methods:
+- `ok(promise: Object): Promise`
+- `cb(fn: Function, ...args: any[]): Promise`
+- `waitFor(ms: number): Promise`
+- `waitForEvent(emitter: EventEmitter, eventName: string): Promise<Array>`
+- `asyncObject(obj: Object): Promise<Object>`

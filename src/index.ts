@@ -33,8 +33,10 @@ let pkg
 try {
 	pkg = require(join(appDir, 'package.json'))
 } catch (err) {
+	/* istanbul ignore next */
 	// tslint:disable-next-line:no-console
 	console.error(`[mono] Could not find package.json in application directory ${appDir}`)
+	/* istanbul ignore next */
 	process.exit(1)
 }
 

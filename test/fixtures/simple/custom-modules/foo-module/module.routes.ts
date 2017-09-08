@@ -1,9 +1,9 @@
 export default [
 	{
 		method: 'GET',
-		path: '/test',
+		path: '/foo',
 		handler(req, res) {
-			res.json({ test: true })
+			res.json({ foo: 'bar' })
 		}
 	}
 ]

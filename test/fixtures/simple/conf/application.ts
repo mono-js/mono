@@ -1,3 +1,5 @@
+import { resolve } from 'path'
+
 export default {
 	mono: {
 		http: {
@@ -5,6 +7,11 @@ export default {
 		},
 		log: {
 			level: 'verbose'
-		}
+		},
+		modules: [
+			'undefined',
+			resolve(__dirname, '../custom-modules/foo-module'),
+			resolve(__dirname, '../custom-modules/bar-module')
+		]
 	}
 }

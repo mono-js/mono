@@ -57,9 +57,13 @@ export default async function (srcDir: string, app: Express) {
 	routeFiles = routeFiles.concat(await glob('modules/**/*.routes.+(ts|js)', { cwd: srcDir }))
 	// Add routes for every module
 	routeFiles.forEach((routeFile) => {
-		const moduleName = routeFile.split('/').slice(-2)[0]
-		if (routeFile[0] === '/') log.debug(`Adding ${moduleName} mono module routes`)
-		else log.debug(`Adding ${moduleName} project module routes`)
+		let moduleName = routeFile.split('/').slice(-2)[0]
+		if (routeFile[0] === '/') {
+			log.debug(`Adding ${moduleName} mono module routes`)
+		}	else {
+			moduleName = routeFile.split('/').slice(-1)[0].split('.')[0]
+			log.debug(`Adding ${moduleName} project module routes`)
+		}
 		// Create Express Router
 		const moduleRouter = Router()
 		// Fetch exported routes by the module

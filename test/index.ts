@@ -16,8 +16,11 @@ test('Works with custom port', async (t) => {
 	stdMock.use()
 	const { app, server } = await mono(join(__dirname, 'fixtures/simple'))
 	stdMock.restore()
-	const output = stdMock.flush()
-	t.true(output.stdout.join(',').includes('Listening on port 8000'))
+	const { stdout } = stdMock.flush()
+	t.true(stdout.join(',').includes('Listening on port 8000'))
+	t.true(stdout.join(',').includes('Init foo-module mono module'))
+	t.true(stdout.join(',').includes('Init test project module'))
+	t.true(stdout.join(',').includes('Init http project module'))
 	// Close server
 	await closeServer(server)
 })

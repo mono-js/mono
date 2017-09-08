@@ -18,9 +18,13 @@ export default async function (srcDir: string, { app, server }) {
 	initFiles = initFiles.concat(await glob('modules/**/*.init.+(ts|js)', { cwd: srcDir }))
 	// Initialize *.init files
 	await Promise.all(initFiles.map(async (initFile) => {
-		const moduleName = initFile.split('/').slice(-2)[0]
-		if (initFile[0] === '/') this.log.debug(`Init ${moduleName} mono module`)
-		else this.log.debug(`Init ${moduleName} project module`)
+		if (initFile[0] === '/') {
+			const moduleName = initFile.split('/').slice(-2)[0]
+			this.log.debug(`Init ${moduleName} mono module`)
+		}	else {
+			const moduleName = initFile.split('/').slice(-1)[0].split('.')[0]
+			this.log.debug(`Init ${moduleName} project module`)
+		}
 		let module = require((initFile[0] === '/' ? initFile : join(srcDir, initFile)))
 		module = module.default ? module.default : module
 		if (typeof module === 'function') {
