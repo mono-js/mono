@@ -75,7 +75,7 @@ export default function (options: MonoJWT.Options, app) {
 	options.headerKey = options.headerKey || 'Authorization'
 	options.secret = options.secret || 'secret'
 	options.expiresIn = options.expiresIn || '7d'
-	// Bing jwt methods
+	// Bind jwt methods with options
 	jwt.generateJWT = generateJWT.bind({ jwt: options })
 	jwt.loadSession = loadSession.bind({ jwt: options })
 	// Add first middleware to add JWT support
