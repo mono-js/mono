@@ -114,24 +114,22 @@ export default async function (srcDir: string, app: Express) {
 					}
 				}
 			})
-			// Handle versionning (1st)
-			handler.push(versionning(r.version))
-			// Handle authentication (2nd)
+			// Handle authentication (1st)
 			r.session = r.session || false
 			// Force session if acl defined (.is or .can)
 			if (r.is || r.can) r.session = true
 			if (r.session) {
 				handler.push(authentication(r.session))
 			}
-			// Check ACL role
+			// Check ACL role (2nd)
 			if (r.is) {
 				handler.push(acl.is(r.is))
 			}
-			// Check ACL actions
+			// Check ACL actions (3rd)
 			if (r.can) {
 				handler.push(acl.can(r.can))
 			}
-			// Add validation middleware validate schema defined (3rd)
+			// Add validation middleware validate schema defined (4th)
 			r.validate = r.validate || r.validation
 			if (r.validate) {
 				handler.push(validate(r.validate))
@@ -139,7 +137,14 @@ export default async function (srcDir: string, app: Express) {
 			r.handler = [...handler, ...r.handler]
 			// Add route in express app, see http://expressjs.com/fr/4x/api.html#router.route
 			r.method.forEach((method) => {
-				moduleRouter.route(`/:version(v\\d+)?${r.path}`)[method](r.handler)
+				let v = Array.isArray(r.version) ? r.version.join('|') : (r.version || '*')
+				let optional = ''
+				// If no version defined or accept any version
+				if (v === '*') {
+					v = 'v\\d+'
+					optional = '?'
+				}
+				moduleRouter.route(`/:version(${v})${optional}${r.path}`)[method](r.handler)
 			})
 			return true
 		})
@@ -218,22 +223,6 @@ export default async function (srcDir: string, app: Express) {
 			context
 		})
 	})
-}
-
-function versionning(version) {
-	return (req, res, next) => {
-		// If no version defined for the route, ignore actual version
-		if (!version) {
-			return next()
-		}
-		// Force version to be an array
-		version = (!Array.isArray(version) ? [version] : version)
-		// Check if param version is matching the route version(s)
-		if (version.includes(req.params.version || req.headers['api-version'])) {
-			return next()
-		}
-		next(new HttpError('version-not-supported', 400, { version }))
-	}
 }
 
 function authentication(options) {
