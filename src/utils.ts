@@ -1,4 +1,5 @@
 import { EventEmitter } from 'events'
+import * as bcrypt from 'bcrypt'
 
 /*
 ** ok(promise: Promise): <Promise>
@@ -14,7 +15,7 @@ export async function ok(promise: Promise<any>): Promise<any> {
 /*
 ** cb(fn: Function, args: ...any): <Promise>
 */
-export async function cb(fn: (...args: any[]) => any, ...args: any[]): Promise<any> {
+export function cb(fn: (...args: any[]) => any, ...args: any[]): Promise<any> {
 	return new Promise((resolve, reject) => {
 		fn(...args, (err, result) => {
 			if (err) return reject(err)
@@ -26,14 +27,14 @@ export async function cb(fn: (...args: any[]) => any, ...args: any[]): Promise<a
 /*
 ** waitFor(ms)
 */
-export async function waitFor(ms?: number): Promise<any> {
+export function waitFor(ms?: number): Promise<any> {
 	return new Promise((resolve) => setTimeout(resolve, ms || 0))
 }
 
 /*
 ** waitForEvent(emmiter, eventName)
 */
-export async function waitForEvent(emmiter: EventEmitter, eventName: string): Promise<any> {
+export function waitForEvent(emmiter: EventEmitter, eventName: string): Promise<any> {
 	return new Promise((resolve, reject) => {
 		emmiter.once(eventName, (...args) => resolve([...args]))
 	})
@@ -53,4 +54,20 @@ export async function asyncObject(obj = {}): Promise<any> {
 		container[key] = result
 	})
 	return container
+}
+
+/*
+** hashPassword(password, saltRounds = 10): Promise<string>
+*/
+export async function hashPassword(password: string, saltRounds: number = 10): Promise<string> {
+	const salt = await bcrypt.genSalt(saltRounds)
+
+	return bcrypt.hash(password, salt)
+}
+
+/*
+** hashPassword(password): Promise<boolean>
+*/
+export function verifyPassword(password: string, candidate: string): Promise<boolean> {
+	return bcrypt.compare(candidate, password)
 }
