@@ -37,7 +37,6 @@
     "@terrajs/imperium": "^1.0.0",
     "@types/bcrypt": "^1.0.0",
     "@types/express": "^4.0.37",
-    "@types/joi": "^10.4.3",
     "@types/jsonwebtoken": "^7.2.3",
     "@types/morgan": "^1.7.33",
     "@types/winston": "^2.3.5",
