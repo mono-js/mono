@@ -1,4 +1,4 @@
-export default [
+module.exports = [
 	{
 		method: 'GET',
 		path: '/foo',

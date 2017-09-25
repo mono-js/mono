@@ -29,24 +29,22 @@ npm install --save @terrajs/mono
 conf/
   application.js
   development.js
-modules/
+src/
   users/
     users.init.js
     users.routes.js
-server.js
 package.json
 ```
 
-`server.js`
-```js
-const start = require('@terrajs/mono').default
+`package.json`
 
-start()
-```
-
-With [TypeScript](https://github.com/Microsoft/TypeScript):
-```ts
-import start from '@terrajs/mono'
+```json
+{
+  "scripts": {
+    "dev": "mono-dev",
+    "start": "mono"
+  }
+}
 ```
 
 ## Configuration
