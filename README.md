@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/29137684-70c284aa-7d41-11e7-8362-031a7866dbf2.png" width="300" alt="Mono"/></h1>
+<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30864131-12df93b6-a2d3-11e7-9d7a-4e6c22391922.png" width="300" alt="Mono"/></h1>
 
 > Mono is a REST API Framework for node.js (with TypeScript support)
 
@@ -103,3 +103,7 @@ Methods:
 - `asyncObject(obj: Object): Promise<Object>`
 - `hashPassword(password: String, saltRounds: Number = 10): Promise<String>`
 - `verifyPassword(password: String, candidate: String): Promise<Boolean>`
+
+## Credits
+
+Logo created by Frederick Allen from the Noun Project.
