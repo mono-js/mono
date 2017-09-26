@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30864068-eb41e886-a2d2-11e7-8877-ef5a87a9c414.png" width="300" alt="Mono"/></h1>
+<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30864131-12df93b6-a2d3-11e7-9d7a-4e6c22391922.png" width="300" alt="Mono"/></h1>
 
 > Mono is a REST API Framework for node.js (with TypeScript support)
 
