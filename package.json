@@ -19,7 +19,7 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "lint": "eslint 'lib/**'",
+    "lint": "eslint lib/** bin/**",
     "test": "nyc ava --verbose --serial test/ && nyc report --reporter=html",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "preversion": "npm test"
@@ -42,6 +42,7 @@
     "app-root-dir": "^1.0.2",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.1",
+    "chalk": "^2.1.0",
     "express": "^4.15.4",
     "express-validation": "^1.0.2",
     "glob-promise": "^3.1.0",
@@ -50,6 +51,7 @@
     "joi-to-json-schema": "^3.0.0",
     "jsonwebtoken": "^8.0.1",
     "morgan": "^1.8.2",
+    "nodemon": "^1.12.1",
     "winston": "^2.3.1"
   },
   "devDependencies": {
