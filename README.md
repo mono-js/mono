@@ -25,6 +25,8 @@ npm install --save @terrajs/mono
 
 ## Usage
 
+**INFO:** You need `node` >= `8.0.0` to use Mono since it make the use of `async/await`
+
 ```
 conf/
   application.js
@@ -90,7 +92,7 @@ const { conf, log, acl, jwt, HttpError } = require('@terrajs/mono')
 ## Utils
 
 ```js
-const { utils } = require('@terrajs/mono')
+const { ok, cb, waitFor, ... } = require('@terrajs/mono/utils')
 ```
 
 Methods:
