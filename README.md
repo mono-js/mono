@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30864131-12df93b6-a2d3-11e7-9d7a-4e6c22391922.png" width="300" alt="Mono"/></h1>
 
-> Mono is a REST API Framework for node.js (with TypeScript support)
+> Mono is a REST API Framework for node.js
 
 [![npm version](https://img.shields.io/npm/v/@terrajs/mono.svg)](https://www.npmjs.com/package/@terrajs/mono)
 [![Travis](https://img.shields.io/travis/terrajs/mono/master.svg)](https://travis-ci.org/terrajs/mono)
