@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30864131-12df93b6-a2d3-11e7-9d7a-4e6c22391922.png" width="300" alt="Mono"/></h1>
 
-> Mono is a REST API Framework for node.js (with TypeScript support)
+> Mono is a REST API Framework for node.js
 
 [![npm version](https://img.shields.io/npm/v/@terrajs/mono.svg)](https://www.npmjs.com/package/@terrajs/mono)
 [![Travis](https://img.shields.io/travis/terrajs/mono/master.svg)](https://travis-ci.org/terrajs/mono)
@@ -25,28 +25,28 @@ npm install --save @terrajs/mono
 
 ## Usage
 
+**INFO:** You need `node` >= `8.0.0` to use Mono since it make the use of `async/await`
+
 ```
 conf/
   application.js
   development.js
-modules/
+src/
   users/
     users.init.js
     users.routes.js
-server.js
 package.json
 ```
 
-`server.js`
-```js
-const start = require('@terrajs/mono').default
+`package.json`
 
-start()
-```
-
-With [TypeScript](https://github.com/Microsoft/TypeScript):
-```ts
-import start from '@terrajs/mono'
+```json
+{
+  "scripts": {
+    "dev": "mono dev",
+    "start": "mono"
+  }
+}
 ```
 
 ## Configuration
@@ -86,13 +86,13 @@ All these files should export an `Object`, to configure Mono, use the `mono` pro
 ## Getters
 
 ```js
-const { conf, log, acl, jwt, HttpError } = require('@terrajs/mono')
+const { conf, log, imperium, jwt, HttpError } = require('@terrajs/mono')
 ```
 
 ## Utils
 
 ```js
-const { utils } = require('@terrajs/mono')
+const { ok, cb, waitFor, ... } = require('@terrajs/mono/utils')
 ```
 
 Methods:
@@ -103,3 +103,7 @@ Methods:
 - `asyncObject(obj: Object): Promise<Object>`
 - `hashPassword(password: String, saltRounds: Number = 10): Promise<String>`
 - `verifyPassword(password: String, candidate: String): Promise<Boolean>`
+
+## Credits
+
+Logo created by Frederick Allen from the Noun Project.

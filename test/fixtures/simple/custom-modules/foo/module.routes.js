@@ -1,9 +1,9 @@
 module.exports = [
 	{
 		method: 'GET',
-		path: '/bar',
+		path: '/foo',
 		handler(req, res) {
-			res.json({ bar: 'foo' })
+			res.json({ foo: 'bar' })
 		}
 	}
 ]
