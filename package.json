@@ -12,7 +12,7 @@
   },
   "nyc": {
     "include": [
-      "src/"
+      "lib/"
     ]
   },
   "engines": {
@@ -38,20 +38,21 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@terrajs/imperium": "^1.1.1",
+    "@terrajs/imperium": "^2.0.0",
     "app-root-dir": "^1.0.2",
     "bcrypt": "^1.0.3",
-    "body-parser": "^1.18.1",
+    "body-parser": "^1.18.2",
     "chalk": "^2.1.0",
-    "express": "^4.15.4",
+    "express": "^4.15.5",
     "express-validation": "^1.0.2",
-    "glob-promise": "^3.1.0",
+    "glob-promise": "^3.2.0",
     "helmet": "^3.8.1",
-    "joi": "^11.0.1",
+    "joi": "^11.1.1",
     "joi-to-json-schema": "^3.0.0",
     "jsonwebtoken": "^8.0.1",
-    "morgan": "^1.8.2",
+    "morgan": "^1.9.0",
     "nodemon": "^1.12.1",
+    "sywac": "^1.2.0",
     "winston": "^2.3.1"
   },
   "devDependencies": {
@@ -60,8 +61,8 @@
     "eslint": "^4.7.2",
     "eslint-plugin-node": "^5.1.1",
     "nyc": "^11.2.1",
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.4",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
     "rimraf": "^2.6.2",
     "std-mocks": "^1.0.1"
   },

@@ -43,7 +43,7 @@ package.json
 ```json
 {
   "scripts": {
-    "dev": "mono-dev",
+    "dev": "mono dev",
     "start": "mono"
   }
 }
@@ -86,7 +86,7 @@ All these files should export an `Object`, to configure Mono, use the `mono` pro
 ## Getters
 
 ```js
-const { conf, log, acl, jwt, HttpError } = require('@terrajs/mono')
+const { conf, log, imperium, jwt, HttpError } = require('@terrajs/mono')
 ```
 
 ## Utils

@@ -12,7 +12,7 @@ const closeServer = (server) => {
 
 test('Works with custom port', async (t) => {
 	stdMock.use()
-	const { app, server } = await mono(join(__dirname, 'fixtures/simple'))
+	const { server } = await mono(join(__dirname, 'fixtures/simple'))
 	stdMock.restore()
 	let { stdout } = stdMock.flush()
 	stdout = stdout.join(',')
@@ -22,7 +22,7 @@ test('Works with custom port', async (t) => {
 	t.true(stdout.includes('Init http.init.js'))
 	t.true(stdout.includes('Adding routes from foo module'))
 	t.true(stdout.includes('Adding routes from hello/hello.routes.js'))
-	t.true(stdout.includes('Listening on port 8000'))
+	t.true(stdout.includes('Server running on'))
 	// Close server
 	await closeServer(server)
 })
