@@ -5,7 +5,8 @@
   "main": "lib/",
   "files": [
     "lib",
-    "bin"
+    "bin",
+    "utils.js"
   ],
   "bin": {
     "mono": "./bin/mono.js"
@@ -40,7 +41,6 @@
   "dependencies": {
     "@terrajs/imperium": "^2.0.0",
     "app-root-dir": "^1.0.2",
-    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "chalk": "^2.1.0",
     "express": "^4.15.5",

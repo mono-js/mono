@@ -101,8 +101,6 @@ Methods:
 - `waitFor(ms: number): Promise`
 - `waitForEvent(emitter: EventEmitter, eventName: string): Promise<Array>`
 - `asyncObject(obj: Object): Promise<Object>`
-- `hashPassword(password: String, saltRounds: Number = 10): Promise<String>`
-- `verifyPassword(password: String, candidate: String): Promise<Boolean>`
 
 ## Credits
 
