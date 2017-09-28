@@ -46,6 +46,7 @@
     "clear-module": "^2.1.0",
     "express": "^4.15.5",
     "express-validation": "^1.0.2",
+    "glob": "^7.1.2",
     "glob-promise": "^3.2.0",
     "helmet": "^3.8.2",
     "joi": "^11.1.1",
