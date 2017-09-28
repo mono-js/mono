@@ -1,3 +1,4 @@
+const Joi = require('joi')
 const { HttpError, imperium } = require('../../../../../')
 
 module.exports = [
@@ -13,6 +14,18 @@ module.exports = [
 			})
 			res.json(imperium.roles)
 			// res.json({ foo: 'bar' })
+		}
+	},
+	{
+		method: 'get',
+		path: '/hello-validation',
+		validation: {
+			query: Joi.object().keys({
+				test: Joi.string().equal('test').required()
+			})
+		},
+		handler(req, res) {
+			res.json({ hello: true })
 		}
 	},
 	{
