@@ -25,7 +25,13 @@ npm install --save @terrajs/mono
 
 ## Usage
 
-**INFO:** You need `node` >= `8.0.0` to use Mono since it make the use of `async/await`
+**INFO:** You need `node` >= `8.0.0` to use Mono since it uses `async/await`
+
+### Starter template
+
+You can boostrap a Mono project by using our official [Starter template](https://github.com/terrajs/mono-starter), it uses MongoDB and has tests with coverage to help you boostrap your future project!
+
+### Manual
 
 ```
 conf/
@@ -38,15 +44,25 @@ src/
 package.json
 ```
 
-`package.json`
+Add these `scripts` into your `package.json`:
 
 ```json
-{
-  "scripts": {
-    "dev": "mono dev",
-    "start": "mono"
-  }
+"scripts": {
+  "dev": "mono dev",
+  "start": "mono"
 }
+```
+
+### Start in development
+
+```bash
+npm run dev
+```
+
+### Start in production
+
+```bash
+NODE_ENV=production npm start
 ```
 
 ## Configuration
