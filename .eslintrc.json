@@ -53,6 +53,7 @@
 		]
 	},
 	"globals": {
-		"Promise": true
+		"Promise": true,
+		"HttpError": true
 	}
 }
