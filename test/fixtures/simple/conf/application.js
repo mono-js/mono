@@ -9,8 +9,8 @@ module.exports = {
 			level: 'verbose'
 		},
 		modules: [
-			join(__dirname, '../custom-modules/foo'),
-			join(__dirname, '../custom-modules/bar')
+			join(__dirname, '../modules/db'),
+			join(__dirname, '../modules/unknown')
 		]
 	}
 }

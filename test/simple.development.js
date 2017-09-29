@@ -9,11 +9,14 @@ let ctx
 test('Start the server and log whats happening', async (t) => {
 	ctx = await start(join(__dirname, 'fixtures/simple'), { monoPath })
 	const stdout = ctx.stdout.join('\n')
-	t.true(stdout.includes('Boot foo module'))
-	t.true(stdout.includes('Init foo module'))
+	t.true(stdout.includes('Environment: test'))
+	t.true(stdout.includes('Loading conf/application.js'))
+	t.true(stdout.includes('Boot db module'))
+	t.true(stdout.includes('Init db module'))
 	t.true(stdout.includes('Init hello/hello.init.js'))
 	t.true(stdout.includes('Init http.init.js'))
-	t.true(stdout.includes('Adding routes from foo module'))
+	t.true(stdout.includes('ACL loaded from db module'))
+	t.true(stdout.includes('Adding routes from db module'))
 	t.true(stdout.includes('Adding routes from hello/hello.routes.js'))
 	t.true(stdout.includes('Server running on'))
 })
@@ -37,6 +40,13 @@ test('GET /_ping => pong', async (t) => {
 	t.is(stderr.length, 0)
 	t.is(stdout.length, 1)
 	t.true(stdout[0].includes('GET /_ping'))
+})
+
+test('GET /_version => 200 with pkg version', async (t) => {
+	const { statusCode, body } = await $get('/_version')
+	t.is(statusCode, 200)
+	const pkg = require('../package.json')
+	t.is(body, pkg.version)
 })
 
 test('GET /_routes => 200 with routes', async (t) => {
