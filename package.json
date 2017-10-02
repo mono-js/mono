@@ -1,6 +1,6 @@
 {
   "name": "@terrajs/mono",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Framework to create monolithic REST API",
   "main": "lib/",
   "files": [
