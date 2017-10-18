@@ -39,7 +39,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@terrajs/imperium": "^2.0.0",
+    "imperium": "^2.0.1",
     "app-root-dir": "^1.0.2",
     "body-parser": "^1.18.2",
     "chalk": "^2.1.0",
@@ -59,7 +59,7 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "@terrajs/mono-test-utils": "^1.0.4",
+    "mono-test-utils": "^1.0.4",
     "ava": "^0.22.0",
     "codecov": "^2.3.0",
     "eslint": "^4.7.2",

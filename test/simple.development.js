@@ -1,7 +1,7 @@
 const test = require('ava')
 const { join } = require('path')
 
-const { start, stop, $get } = require('@terrajs/mono-test-utils')
+const { start, stop, $get } = require('mono-test-utils')
 const monoPath = join(__dirname, '..')
 
 let ctx
