@@ -115,7 +115,7 @@ Methods:
 - `ok(promise: Object): Promise`
 - `cb(fn: Function, ...args: any[]): Promise`
 - `waitFor(ms: number): Promise`
-- `waitForEvent(emitter: EventEmitter, eventName: string): Promise<Array>`
+- `waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Promise<Array>`
 - `asyncObject(obj: Object): Promise<Object>`
 
 ## Credits
