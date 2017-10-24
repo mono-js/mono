@@ -63,8 +63,84 @@ Mono offers a module system to plug any functionality in your project:
 ## Getters
 
 ```js
-const { conf, log, imperium, jwt, HttpError } = require('@terrajs/mono')
+const { HttpError, conf, log, imperium, jwt } = require('@terrajs/mono')
 ```
+
+### HttpError
+
+Custom error class (extends `Error`), used by Mono for API errors with status code and context.
+
+```js
+new HttpError(message [, statusCode] [, context])
+```
+
+Arguments:
+- message: `string`, **required**
+- status: `number`, default: `500`
+- context: `object`, default: `{}`
+
+Example:
+
+```js
+const { HttpError } = require('@terrajs/mono')
+
+throw new HttpError('file-not-found', 404, { path: '/tmp/my-file.txt' })
+```
+
+### conf
+
+> Your project configuration defined in `conf/`
+
+### log
+
+> Log instance
+
+```js
+// Write on stdout
+log.verbose('This is a verbose message')
+log.debug('This is a debug message')
+log.info('This is an information message')
+log.warn('Warning, this feature will be removed soon')
+
+// Write on stderr
+log.error('An error appened')
+
+// Profiling
+log.profile('test')
+setTimeout(() => log.profile('test'), 1000)
+```
+
+### imperium
+
+> [Imperium](https://github.com/terrajs/imperium) instance, use it to define ACL of your app
+
+### jwt
+
+> JWT utils to create and decode a token
+
+```js
+jwt.generateJWT(session: object): Promise<string>
+```
+
+  `session` must be an `object` with an `userId` property, you can use [jwt conf](#jwt) to customize the token behaviour (expiration, secret key).
+
+  Example:
+
+  ```js
+  const token = await jwt.generateJWT({ userId: 1, username: 'TerraJS' })
+  ```
+
+```js
+jwt.loadSession(req, [getToken: function]): Promise<object>
+```
+
+  `req` must be the Express request. `getToken` is optionnal, if defined it will be called with `req` and should return the `token` to decode.
+  
+  Example:
+  
+  ```js
+  const session = await jwt.loadSession(req)
+  ```
 
 ## Utils
 
@@ -74,12 +150,34 @@ Mono is shipped with useful utils:
 const { ok, cb, waitFor, ... } = require('@terrajs/mono/utils')
 ```
 
-Methods:
-- `ok(promise: Object): Promise`
-- `cb(fn: Function, ...args: any[]): Promise`
-- `waitFor(ms: number): Promise`
-- `waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Promise<Array>`
-- `asyncObject(obj: Object): Promise<Object>`
+Waits for the value of promise. If promise throws an Error, returns undefined.
+
+```js
+ok(promise: Object): Promise
+```
+
+Calls a function fn that takes arguments args and an (err, result) callback. Waits for the callback result, throwing an Error if err is truthy.
+
+```js
+cb(fn: Function, ...args: any[]): Promise
+```
+
+Waits for `ms` milliseconds to pass, use `setTimeout` under the hood.
+
+```js
+waitFor(ms: number): Promise
+```
+
+Waits for emitter to emit an eventName event.
+
+```js
+waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Promise<Array>
+```
+Waits for all Promises in the keys of obj to resolve.
+
+```js
+asyncObject(obj: Object): Promise<Object>
+```
 
 We developped other utils that you might find useful:
 - [mongodb-utils](https://github.com/terrajs/mongodb-utils)
