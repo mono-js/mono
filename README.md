@@ -127,24 +127,24 @@ Properties:
 
   ### logLevel
 
-> Log level/format for the HTTP requests, the value will be given to [morgan](https://github.com/expressjs/morgan) middleware. If `false`, no HTTP log will be made.
+  > Log level/format for the HTTP requests, the value will be given to [morgan](https://github.com/expressjs/morgan) middleware. If `false`, no HTTP log will be made.
 
-- Type: `string` or `false`
-- Default: `'dev'`
+  - Type: `string` or `false`
+  - Default: `'dev'`
 
   ### port
 
-> Port number where the HTTP server will listen, can be overwriten by `PORT` environment variable.
+  > Port number where the HTTP server will listen, can be overwriten by `PORT` environment variable.
 
-- Type: `number`
-- Default: `8000`
+  - Type: `number`
+  - Default: `8000`
 
   ### preventListen
 
-> Prevent server to listen (useful to make some scripts based on your services). 
+  > Prevent server to listen (useful to make some scripts based on your services). 
 
-- Type: `boolean`
-- Default: `false`
+  - Type: `boolean`
+  - Default: `false`
 
 ### jwt
 
@@ -155,24 +155,24 @@ Properties:
 
   ### secret
 
-> Secret key to encode the JWT.
+  > Secret key to encode the JWT.
 
-- Type: `string`
-- Default: `'secret'`
+  - Type: `string`
+  - Default: `'secret'`
 
   ### expiresIn
 
-> JWT expiration time, option given directly to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage).
+  > JWT expiration time, option given directly to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage).
 
-- Type: `number` or `string`
-- Default: `'7d'`
+  - Type: `number` or `string`
+  - Default: `'7d'`
 
   ### headerKey
 
-> HTTP header key to look for the JWT.
+  > HTTP header key to look for the JWT.
 
-- Type: `string`
-- Default: `'Authorization'`
+  - Type: `string`
+  - Default: `'Authorization'`
 
 ### log
 
@@ -183,50 +183,50 @@ Properties:
 
   ### level
 
-> Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable.
+  > Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable.
 
-- Type: `string`
-- Default: `'verbose'`
-- Available values: `'verbose'`, `'debug'`, `'info'`, `'warn'`, `'error'`
+  - Type: `string`
+  - Default: `'verbose'`
+  - Available values: `'verbose'`, `'debug'`, `'info'`, `'warn'`, `'error'`
 
   ### console
 
-> Write logs in the console (stdout and stderr).
+  > Write logs in the console (stdout and stderr).
 
-- Type: `boolean`
-- Default: `true`
+  - Type: `boolean`
+  - Default: `true`
 
   ### files
 
-> Write logs in file(s).
+  > Write logs in file(s).
 
-- Type: `array`
-- Default: `[]`
+  - Type: `array`
+  - Default: `[]`
 
-Properties:
-- filename: `string`, **required**, path to log file.
-- level: `string`, *optional*, default to `log.level`, log level to write in file.
-- See [winston file transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#file-transport) for the full list of properties
+  Properties:
+  - filename: `string`, **required**, path to log file.
+  - level: `string`, *optional*, default to `log.level`, log level to write in file.
+  - See [winston file transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#file-transport) for the full list of properties
 
   ### http
 
-> Stream logs to an http endpoint.
+  > Stream logs to an http endpoint.
 
-- Type: `array`
-- Default: `[]`
+  - Type: `array`
+  - Default: `[]`
 
-Properties:
-- level: `string`, *optional*, default to `log.level`, log level to write in file.
-- See [winston http transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#http-transport) for the full list of properties
+  Properties:
+  - level: `string`, *optional*, default to `log.level`, log level to write in file.
+  - See [winston http transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#http-transport) for the full list of properties
 
   ### transports
 
-> Use custom Winton tranporter to send logs to.
+  > Use custom Winton tranporter to send logs to.
 
-- Type: `array`
-- Default: `[]`
+  - Type: `array`
+  - Default: `[]`
 
-See [winston custom transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-more) for the full list of properties
+  See [winston custom transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-more) for the full list of properties
 
 ## Credits
 
