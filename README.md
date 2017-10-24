@@ -81,6 +81,11 @@ Methods:
 - `waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Promise<Array>`
 - `asyncObject(obj: Object): Promise<Object>`
 
+We developped other utils that you might want useful:
+- [mongodb-utils](https://github.com/terrajs/mongodb-utils)
+- [elasticsearch-utils](https://github.com/terrajs/elasticsearch-utils)
+- [mono-test-utils](https://github.com/terrajs/mono-test-utils)
+
 ## Mono Configuration
 
 You project configuration should be inside the `conf/` directory.
@@ -120,21 +125,21 @@ Properties:
 - Type: `object`
 - Default: `{}`
 
-### http.logLevel
+  ### logLevel
 
 > Log level/format for the HTTP requests, the value will be given to [morgan](https://github.com/expressjs/morgan) middleware. If `false`, no HTTP log will be made.
 
 - Type: `string` or `false`
 - Default: `'dev'`
 
-### http.port
+  ### port
 
 > Port number where the HTTP server will listen, can be overwriten by `PORT` environment variable.
 
 - Type: `number`
 - Default: `8000`
 
-### http.preventListen
+  ### preventListen
 
 > Prevent server to listen (useful to make some scripts based on your services). 
 
@@ -148,21 +153,21 @@ Properties:
 - Type: `object`
 - Default: `{}`
 
-### jwt.secret
+  ### secret
 
 > Secret key to encode the JWT.
 
 - Type: `string`
 - Default: `'secret'`
 
-### jwt.expiresIn
+  ### expiresIn
 
 > JWT expiration time, option given directly to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage).
 
 - Type: `number` or `string`
 - Default: `'7d'`
 
-### jwt.headerKey
+  ### headerKey
 
 > HTTP header key to look for the JWT.
 
@@ -176,7 +181,7 @@ Properties:
 - Type: `object`
 - Default: `{}`
 
-### log.level
+  ### level
 
 > Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable.
 
@@ -184,14 +189,14 @@ Properties:
 - Default: `'verbose'`
 - Available values: `'verbose'`, `'debug'`, `'info'`, `'warn'`, `'error'`
 
-### log.console
+  ### console
 
 > Write logs in the console (stdout and stderr).
 
 - Type: `boolean`
 - Default: `true`
 
-### log.files
+  ### files
 
 > Write logs in file(s).
 
@@ -203,7 +208,7 @@ Properties:
 - level: `string`, *optional*, default to `log.level`, log level to write in file.
 - See [winston file transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#file-transport) for the full list of properties
 
-### log.http
+  ### http
 
 > Stream logs to an http endpoint.
 
@@ -214,7 +219,7 @@ Properties:
 - level: `string`, *optional*, default to `log.level`, log level to write in file.
 - See [winston http transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#http-transport) for the full list of properties
 
-### log.transports
+  ### transports
 
 > Use custom Winton tranporter to send logs to.
 
