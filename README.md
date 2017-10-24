@@ -81,7 +81,7 @@ Methods:
 - `waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Promise<Array>`
 - `asyncObject(obj: Object): Promise<Object>`
 
-We developped other utils that you might want useful:
+We developped other utils that you might find useful:
 - [mongodb-utils](https://github.com/terrajs/mongodb-utils)
 - [elasticsearch-utils](https://github.com/terrajs/elasticsearch-utils)
 - [mono-test-utils](https://github.com/terrajs/mono-test-utils)
