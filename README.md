@@ -122,7 +122,7 @@ setTimeout(() => log.profile('test'), 1000)
 jwt.generateJWT(session: object): Promise<string>
 ```
 
-  `session` must be an `object` with an `userId` property, you can use [jwt conf](#jwt) to customize the token behaviour (expiration, secret key).
+  `session` must be an `object` with an `userId` property, you can use [jwt conf](#jwt-1) to customize the token behaviour (expiration, secret key).
 
   Example:
 
@@ -206,7 +206,7 @@ All these files should export an `Object`, to configure Mono, use the `mono` pro
 Properties:
 - [modules](#modules)
 - [http](#http)
-- [jwt](#jwt)
+- [jwt](#jwt-1)
 - [log](#log)
 
 ### modules
