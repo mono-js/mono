@@ -7,50 +7,27 @@
 [![Coverage](https://img.shields.io/codecov/c/github/terrajs/mono/master.svg)](https://codecov.io/gh/terrajs/mono)
 [![license](https://img.shields.io/github/license/terrajs/mono.svg)](https://github.com/terrajs/mono/blob/master/LICENSE.md)
 
-## Installation
-
-```bash
-npm install --save @terrajs/mono
-```
-
 ## Features
 
-- Configuration based on environment
-- Easy API Versionning (`v1`, `v2`...)
-- Sessions with [Json Web Token](https://jwt.io)
-- ACL with [imperium](https://github.com/terrajs/imperium)
+- Environment based config
+- API Versionning (`v1`, `v2`...)
+- [Json Web Token](https://jwt.io) sessions
+- ACL with [Imperium](https://github.com/terrajs/imperium)
 - Routes validation with [joi](https://github.com/hapijs/joi)
-- Init modules via `modules/**/*.init.js`
-- Routes declaration via `modules/**/*.routes.js`
+- Init files via `src/**/*.init.js`
+- Routes declaration via `src/**/*.routes.js`
+- Extendable with modules 
 
 ## Usage
 
-**INFO:** You need `node` >= `8.0.0` to use Mono since it uses `async/await`
+**INFO:** You need `node` >= `8.0.0` to use Mono since it uses native `async/await`
 
-### Starter template
+### Installation
 
-You can boostrap a Mono project by using our official [Starter template](https://github.com/terrajs/mono-starter), it uses MongoDB and has tests with coverage to help you boostrap your future project!
+You can boostrap a Mono project by using our official [create-mono-app](https://github.com/terrajs/create-mono-app):
 
-### Manual
-
-```
-conf/
-  application.js
-  development.js
-src/
-  users/
-    users.init.js
-    users.routes.js
-package.json
-```
-
-Add these `scripts` into your `package.json`:
-
-```json
-"scripts": {
-  "dev": "mono dev",
-  "start": "mono"
-}
+```bash
+npx create-mono-app my-app
 ```
 
 ### Start in development
@@ -65,39 +42,23 @@ npm run dev
 NODE_ENV=production npm start
 ```
 
-## Configuration
+### Run the tests with coverage
 
-You project configuration should be inside the `conf/` directory.
+```bash
+npm test
+```
 
-Mono will load and merge these files in this order:
+## Official Modules
 
-1. `conf/application.js`
-2. `conf/${process.env.NODE_ENV}.js`
-3. `conf/local.js` (should be inside `.gitignore`)
+Mono offers a module system to plug any functionality in your project:
 
-All these files should export an `Object`, to configure Mono, use the `mono` property.
-
-`mono` available properties:
-
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| modules | `Array` | `[]` | External modules to use with Mono, see for example [mono-mongodb](https://github.com/terrajs/mono-mongodb). |
-| http | `Object` | `{}` | HTTP configuration of Mono server. |
-| http.logLevel | `String` or `false` | `'dev'` | Log level/format for the HTTP requests, the value will be given to [morgan](https://github.com/expressjs/morgan) middleware. If `false`, no HTTP log will be made. |
-| http.port | `Number` | `5000` | Port number where the HTTP server will listen, can be overwriten by `PORT` environment variable. |
-| http.host | `String` | `'localhost'` | Hostname to listen, can be overwriten by `HOST` environment variable. |
-| jwt | `Object` | `{}` | Json Web Token configuration. |
-| jwt.secret | `String` | `'secret'` | Secret key to encode the JWT. |
-| jwt.expiresIn | `Number` or `String` | `'7d'` | JWT expiration time, opton given directly to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage). |
-| jwt.headerKey | `String` | `'Authorization'` | HTTP header key to look for the JWT. |
-| log | `Object` | `{}` | Log configuration, it uses [winston](https://github.com/winstonjs/winston) under the hood. |
-| log.level | `String` | `'verbose'` | Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable. |
-| log.console | `Boolean` | `true` | Write log in the console (stdout and stderr). |
-| log.files | `Array` | `[]` | Configurations to write logs on file(s). |
-| log.files[].filename | `String` | *Required* | Path to log file. |
-| log.files[].level | `String` | `log.level` | Log level to write into the file. |
-| log.files[].maxsize | `Number` | `See winston File transporter` | Max filesize before creating a new one. |
-| log.files[].maxFiles | `Number` | `See winston File transporter` | Maximum number of files to create. |
+- [mono-mongodb](https://github.com/terrajs/mono-mongodb)
+- [mono-elasticsearch](https://github.com/terrajs/mono-elasticsearch)
+- [mono-redis](https://github.com/terrajs/mono-redis)
+- [mono-io](https://github.com/terrajs/mono-io)
+- [mono-push](https://github.com/terrajs/mono-push)
+- [mono-notifications](https://github.com/terrajs/mono-notifications)
+- [mono-doc](https://github.com/terrajs/mono-doc)
 
 ## Getters
 
@@ -106,6 +67,8 @@ const { conf, log, imperium, jwt, HttpError } = require('@terrajs/mono')
 ```
 
 ## Utils
+
+Mono is shipped with useful utils:
 
 ```js
 const { ok, cb, waitFor, ... } = require('@terrajs/mono/utils')
@@ -117,6 +80,148 @@ Methods:
 - `waitFor(ms: number): Promise`
 - `waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Promise<Array>`
 - `asyncObject(obj: Object): Promise<Object>`
+
+## Mono Configuration
+
+You project configuration should be inside the `conf/` directory.
+
+Mono will load and merge these files in this order:
+
+1. `conf/application.js`
+2. `conf/${process.env.NODE_ENV}.js`
+3. `conf/local.js` (should be inside `.gitignore`)
+
+All these files should export an `Object`, to configure Mono, use the `mono` property.
+
+## mono
+
+> Configuration of Mono
+
+- Type: `object`
+- Default: `{}`
+
+Properties:
+- [modules](#modules)
+- [http](#http)
+- [jwt](#jwt)
+- [log](#log)
+
+### modules
+
+> Modules to use with Mono, it can be the name of a node module or an absolute path to a directory. See for example [mono-mongodb](https://github.com/terrajs/mono-mongodb).
+
+- Type: `array`
+- Default: `[]`
+
+### http
+
+> HTTP configuration of Mono server
+
+- Type: `object`
+- Default: `{}`
+
+### http.logLevel
+
+> Log level/format for the HTTP requests, the value will be given to [morgan](https://github.com/expressjs/morgan) middleware. If `false`, no HTTP log will be made.
+
+- Type: `string` or `false`
+- Default: `'dev'`
+
+### http.port
+
+> Port number where the HTTP server will listen, can be overwriten by `PORT` environment variable.
+
+- Type: `number`
+- Default: `8000`
+
+### http.preventListen
+
+> Prevent server to listen (useful to make some scripts based on your services). 
+
+- Type: `boolean`
+- Default: `false`
+
+### jwt
+
+> Json Web Token configuration.
+
+- Type: `object`
+- Default: `{}`
+
+### jwt.secret
+
+> Secret key to encode the JWT.
+
+- Type: `string`
+- Default: `'secret'`
+
+### jwt.expiresIn
+
+> JWT expiration time, option given directly to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage).
+
+- Type: `number` or `string`
+- Default: `'7d'`
+
+### jwt.headerKey
+
+> HTTP header key to look for the JWT.
+
+- Type: `string`
+- Default: `'Authorization'`
+
+### log
+
+> Log configuration, it uses [winston](https://github.com/winstonjs/winston) under the hood.
+
+- Type: `object`
+- Default: `{}`
+
+### log.level
+
+> Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable.
+
+- Type: `string`
+- Default: `'verbose'`
+- Available values: `'verbose'`, `'debug'`, `'info'`, `'warn'`, `'error'`
+
+### log.console
+
+> Write logs in the console (stdout and stderr).
+
+- Type: `boolean`
+- Default: `true`
+
+### log.files
+
+> Write logs in file(s).
+
+- Type: `array`
+- Default: `[]`
+
+Properties:
+- filename: `string`, **required**, path to log file.
+- level: `string`, *optional*, default to `log.level`, log level to write in file.
+- See [winston file transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#file-transport) for the full list of properties
+
+### log.http
+
+> Stream logs to an http endpoint.
+
+- Type: `array`
+- Default: `[]`
+
+Properties:
+- level: `string`, *optional*, default to `log.level`, log level to write in file.
+- See [winston http transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#http-transport) for the full list of properties
+
+### log.transports
+
+> Use custom Winton tranporter to send logs to.
+
+- Type: `array`
+- Default: `[]`
+
+See [winston custom transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-more) for the full list of properties
 
 ## Credits
 
