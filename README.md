@@ -16,7 +16,7 @@
 - Routes validation with [joi](https://github.com/hapijs/joi)
 - Init files via `src/**/*.init.js`
 - Routes declaration via `src/**/*.routes.js`
-- Extendable with modules 
+- Extendable with modules & hooks
 
 ## Usage
 
