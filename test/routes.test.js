@@ -10,6 +10,7 @@ test('Start fixtures/routes/', async (t) => {
 	ctx = await start(join(__dirname, 'fixtures/routes'), { monoPath })
 	const stdout = ctx.stdout.join('\n')
 	const stderr = ctx.stderr.join('\n')
+	t.true(ctx.routes.length > 0)
 	t.true(stdout.includes('Adding routes from bad.routes.js'))
 	t.true(stderr.includes('Module [bad.routes.js]: Route with index [0] must have a `path` defined'))
 	t.true(stdout.includes('Adding routes from no.routes.js'))

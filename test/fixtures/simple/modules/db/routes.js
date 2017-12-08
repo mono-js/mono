@@ -64,5 +64,13 @@ module.exports = [
 			const user = collection.save(req.body)
 			res.json(user)
 		}
+	},
+	{
+		method: 'get',
+		path: '/doc',
+		handler(req, res) {
+			const { routes } = require('../../../../../')
+			res.json(routes)
+		}
 	}
 ]

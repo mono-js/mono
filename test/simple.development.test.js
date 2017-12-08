@@ -63,6 +63,6 @@ test('GET /404 => 404 status code', async (t) => {
 	t.is(body.context.url, '/404')
 })
 
-test.after('Close the server', async (t) => {
+test.after('Close the server', async () => {
 	await stop(ctx.server)
 })

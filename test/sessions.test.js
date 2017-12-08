@@ -1,7 +1,7 @@
 const test = require('ava')
 const { join } = require('path')
 
-const { start, stop, $get, $post, $put } = require('mono-test-utils')
+const { start, stop, $get } = require('mono-test-utils')
 const monoPath = join(__dirname, '..')
 
 let ctx
@@ -12,6 +12,7 @@ test('Start fixtures/sessions/', async (t) => {
 	const stderr = ctx.stderr.join('\n')
 	t.true(stdout.includes('ACL loaded from users.acl.js'))
 	t.true(stdout.includes('Adding routes from users.routes.js'))
+	t.is(stderr.length, 0)
 })
 
 /*
