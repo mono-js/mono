@@ -1,23 +1,24 @@
 - Getting started
-  - [Quick start](quickstart.md)
-  - [Configuration](configuration.md)
+  - [:zap: Quick start](quickstart.md)
+  - [:wrench: Configuration](configuration.md)
 
 - Guide
-  - [Init files](init-files.md)
-  - [Routing](routing.md)
-  - [Sessions](session.md)
-  - [ACL](acl.md)
-  - [Hooks](hooks.md)
-  - [Utils](utils.md)
+  - [:busstop: Routes](routes.md)
+  - [:bust_in_silhouette: Sessions](session.md)
+  - [:lock: ACL](acl.md)
+  - [:seedling: Init files](init-files.md)
+  - [:whale: Hooks](hooks.md)
+  - [:tophat: Utils](utils.md)
 
 - Resources
-  - [Testing](testing.md)
-  - [Deploying](deploying.md)
+  - [:white_check_mark: Testing](testing.md)
+  - [:blue_book: API Documentation](mono-doc.md)
+  - [:sunny: Deploying](deploying.md)
 
 - Modules
-  - [List of modules](modules.md)
-  - [Create a module](create-module.md)
+  - [:package: Official modules](modules.md)
+  - [:hammer: Create a module](create-module.md)
 
 - [Releases](https://github.com/terrajs/mono/releases)
 
-- [Team](https://github.com/terrajs/mono/graphs/contributors)
+- [Contributors](https://github.com/terrajs/mono/graphs/contributors)

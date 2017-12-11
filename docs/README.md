@@ -15,14 +15,12 @@ See the [Quick start](quickstart.md) for more details.
 
 ## Features
 
-* Environment based config
-* API Versionning (`v1`, `v2`...)
-* [Json Web Token](https://jwt.io) sessions
-* ACL with [Imperium](https://terrajs.org/imperium)
-* Routes validation with [joi](https://github.com/hapijs/joi)
-* Init files via `src/**/*.init.js`
-* Routes declaration via `src/**/*.routes.js`
-* Extendable with [modules](modules.md) & [hooks](hooks.md)
+* :wrench: Environment based config
+* :book: API Versionning (`v1`, `v2`...)
+* :bust_in_silhouette: [Json Web Token](https://jwt.io) sessions
+* :lock: ACL with [Imperium](https://terrajs.org/imperium)
+* :vertical_traffic_light: Routes validation with [joi](https://github.com/hapijs/joi)
+* :package: Extendable with [modules](modules.md) & [hooks](hooks.md)
 
 ## Modules
 
@@ -30,8 +28,10 @@ Mono is shipped with a lot of modules to help you focus on features instead of i
 
 See the [Modules](modules.md) section for more details.
 
-## Team
+## Core Team
 
-- Sebastien Chopin
-- Benjamin Canac
-- Gaetan Senn
+| Avatar | Name | Github | Twitter |
+|--------|------|--------|---------|
+| ![Atinux](https://avatars1.githubusercontent.com/u/904724?s=50&v=4) | Sebastien Chopin | [Atinux](https://github.com/Atinux) | [Atinux](https://twitter.com/Atinux) |
+| ![benjamincanac](https://avatars1.githubusercontent.com/u/739984?s=50&v=4) | Benjamin Canac | [benjamincanac](https://github.com/benjamincanac) | [benjamincanac](https://twitter.com/benjamincanac) |
+| ![gaetansenn](https://avatars2.githubusercontent.com/u/2774075?s=50&v=4) | Gaetan Senn | [gaetansenn](https://github.com/gaetansenn) | [gaetan_senn](https://twitter.com/gaetan_senn) |
