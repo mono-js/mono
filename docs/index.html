@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MONO - REST API Framework for Node.js</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Mono is an opinionated REST API Framework for Node.js based on Express.js">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '<img src="/mono.svg" height="100px">',
+			repo: 'https://github.com/terrajs/mono',
+			coverpage: true,
+			loadSidebar: true,
+			plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://github.com/terrajs/mono/blob/master/docs/' + vm.route.file
+            var editHtml = '<p align="right"><small>[Edit this page on GitHub](' + url + ')</small></p>'
+            return html + '\n----\n' + editHtml
+          })
+        }
+      ]
+    }
+  </script>
+	<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+	<script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+</body>
+</html>
