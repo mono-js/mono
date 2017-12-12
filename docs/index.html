@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">Please wait...</div>
   <script>
     window.$docsify = {
-      name: '<img src="/mono.svg" height="100px">',
+      name: '<img src="/mono.svg" height="120px">',
 			repo: 'https://github.com/terrajs/mono',
 			coverpage: true,
 			loadSidebar: true,
+			subMaxLevel: 2,
 			plugins: [
         function(hook, vm) {
           hook.beforeEach(function (html) {

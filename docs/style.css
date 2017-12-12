@@ -314,8 +314,18 @@ main{
   display: block;
 }
 
-.sidebar ul li ul{
-  padding-left: 20px;
+.sidebar .app-sub-sidebar {
+  padding-left: 15px;
+}
+
+.sidebar .app-sub-sidebar li:before {
+    content: "-";
+    padding-right: 4px;
+    float: left;
+}
+
+.sidebar ul li ul li {
+	font-size: 14px;
 }
 
 .sidebar::-webkit-scrollbar{
@@ -434,7 +444,7 @@ body.sticky .sidebar, body.sticky .sidebar-toggle{
 }
 
 .markdown-section tr:nth-child(2n){
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 
 .markdown-section p.tip{
@@ -866,7 +876,7 @@ section.cover.has-mask .mask{
   font-size: 16px;
   margin: 0 0 1em 0;
   padding: 8px;
-  padding: 0 10px 12px 0;
+  padding: 0 10px 0 0;
   overflow: auto;
   word-wrap: normal;
 }

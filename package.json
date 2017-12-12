@@ -23,7 +23,8 @@
     "lint": "eslint lib/ bin/ test/",
     "test": "npm run lint && nyc ava --verbose --serial test/ && nyc report --reporter=html",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "preversion": "npm test"
+    "preversion": "npm test",
+    "docs": "docsify serve ./docs"
   },
   "repository": {
     "type": "git",
@@ -61,6 +62,7 @@
   "devDependencies": {
     "ava": "^0.23.0",
     "codecov": "^3.0.0",
+    "docsify": "^4.5.5",
     "eslint": "^4.9.0",
     "mono-test-utils": "^1.2.1",
     "nyc": "^11.3.0"

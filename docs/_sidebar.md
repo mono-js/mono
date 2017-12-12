@@ -7,6 +7,7 @@
   - [:bust_in_silhouette: Sessions](session.md)
   - [:lock: ACL](acl.md)
   - [:seedling: Init files](init-files.md)
+  - [:bookmark_tabs: Logging](logging.md)
   - [:whale: Hooks](hooks.md)
   - [:tophat: Utils](utils.md)
 
@@ -16,7 +17,7 @@
   - [:sunny: Deploying](deploying.md)
 
 - Modules
-  - [:package: Official modules](modules.md)
+  - [:package: Mono modules](modules.md)
   - [:hammer: Create a module](create-module.md)
 
 - [Releases](https://github.com/terrajs/mono/releases)

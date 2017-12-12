@@ -9,7 +9,7 @@
 
 ## What is it
 
-Mono is an opinionated web framework to build REST API by following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
+It is an opinionated web framework to build REST API by following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
 
 See the [Quick start](quickstart.md) for more details.
 
@@ -20,6 +20,7 @@ See the [Quick start](quickstart.md) for more details.
 * :bust_in_silhouette: [Json Web Token](https://jwt.io) sessions
 * :lock: ACL with [Imperium](https://terrajs.org/imperium)
 * :vertical_traffic_light: Routes validation with [joi](https://github.com/hapijs/joi)
+* :bookmark_tabs: Logs for application and API calls with [winston](https://github.com/winstonjs/winston) & [morgan](https://github.com/expressjs/morgan)
 * :package: Extendable with [modules](modules.md) & [hooks](hooks.md)
 
 ## Modules

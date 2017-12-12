@@ -2,7 +2,7 @@
 
 > API Framework based on [Express](https://expressjs.com/)
 
-<p>:zap: Build REST API in seconds :zap:</p><br>
+<p>:zap: Write REST API in seconds :zap:</p><br>
 
 [GitHub](https://github.com/terrajs/mono)
 [Get Started](#mono)
