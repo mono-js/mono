@@ -45,7 +45,39 @@ Mono comes with some default routes, the documentation is available in the [rout
 
 ## Starter project
 
-By using `create-mono-app`, you make sure to have all the necessary tools to start building your REST API without any configuration.
+By using `create-mono-app`, you make sure to have all the necessary tools to start building your REST API without any configuration following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
+
+### Tree Structure
+
+The CLI structurates your project as follows:
+
+```
+.
+├── .editorconfig
+├── .eslintrc.json
+├── .gitignore
+├── .travis.yml
+├── README.md
+├── conf
+│   ├── application.js
+│   ├── development.js
+│   ├── production.js
+│   └── test.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── hello
+│   │   ├── hello.acl.js
+│   │   ├── hello.init.js
+│   │   └── hello.routes.js
+│   └── todos
+│       ├── todos.controller.js
+│       ├── todos.routes.js
+│       ├── todos.service.js
+│       └── todos.validation.js
+└── test
+    └── api.test.js
+```
 
 ### Scripts
 
@@ -91,8 +123,7 @@ Run the coverage and uses and [`codecov`](https://github.com/codecov/codecov-nod
 
 Mono offers a module system to plug any functionality in your project.
 
-You can see the full list of modules [here](modules.md).
-
+When you create your app with the CLI, it asks you if you want to use MongoDB, which is one the mono modules, so you can see how easily modules integrates with mono.
 
 ### Exemples
 
