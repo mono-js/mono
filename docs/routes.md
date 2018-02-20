@@ -18,7 +18,76 @@ module.exports = [
 ]
 ```
 
-Mono has some built-in routes:
+## Configuration
+
+### method
+
+Method represents the HTTP VERB of your route, can be one of the following: `GET`, `POST`, `PUT`, `DELETE`, ...
+
+It can be specified in uppercase or lowercase.
+
+It can also take an array of HTTP VERBS in order to create multipe routes:
+
+```js
+module.exports = [
+	{
+		method: ['GET', 'POST'],
+		path: '/hello',
+		handler(req, res) {
+			res.json({ hello: 'world' })
+		}
+	}
+]
+```
+
+### path
+
+Route paths define the endpoints at which requests can be made. Route paths can be strings, string patterns, or regular expressions.
+
+Mono being based on Express 4.x, you can find the full documentation [here](http://expressjs.com/en/guide/routing.html).
+
+### handler
+
+Handler represents the middleware of your route.
+
+Mono uses native async/await so you can use it directly:
+
+```js
+module.exports = [
+  {
+    method: 'GET',
+    path: '/hello',
+    async handler(req, res) {
+      const result = await MyService.getResult()
+
+      res.json(result)
+    }
+  }
+]
+```
+
+You can also pass an Array to the handler key:
+
+```js
+const { checkUser, sayHello } = require('./hello.controller.js')
+
+module.exports = [
+  {
+    method: 'GET',
+    path: '/hello',
+    handler: [
+      checkUser,
+      sayHello
+    ]
+  }
+]
+```
+
+You can find the full documentation on middleware function [here](http://expressjs.com/en/guide/writing-middleware.html).
+
+## Built-in routes
+
+Mono also has some built-in routes:
 
 * `/_` => Returns the name of your app stored in `conf.name` and populated by Mono from your `package.json`
 * `/_ping` => Returns 'pong'
