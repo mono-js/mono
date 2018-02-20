@@ -61,6 +61,17 @@ test('GET /404 => 404 status code', async (t) => {
 	t.is(body.context.url, '/404')
 })
 
+test('GET /hello-error => 500 status code', async (t) => {
+	const { statusCode, body } = await $get('/hello-error')
+	t.is(statusCode, 500)
+	t.is(body.code, 'hello-error')
+	t.deepEqual(body.context, {})
+})
+test('GET /hello-dev-test => 200 status code', async (t) => {
+	const { statusCode, body } = await $get('/hello-dev-test')
+	t.is(statusCode, 200)
+	t.deepEqual(body, { hello: true })
+})
 test('GET /hello-production => 404 status code (env defined)', async (t) => {
 	const { statusCode, body } = await $get('/hello-production')
 	t.is(statusCode, 404)

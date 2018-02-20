@@ -30,6 +30,14 @@ module.exports = [
 	},
 	{
 		method: 'get',
+		path: '/hello-dev-test',
+		env: ['development', 'test'],
+		handler(req, res) {
+			res.json({ hello: true })
+		}
+	},
+	{
+		method: 'get',
 		path: '/hello-production',
 		env: 'production',
 		handler(req, res) {
