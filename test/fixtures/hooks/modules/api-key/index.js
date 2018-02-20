@@ -12,5 +12,7 @@ module.exports = ({ hook }) => {
 		if (req.query.apiKey !== 'secret') {
 			throw new HttpError('invalid-api-key', 401)
 		}
+		// Otherwise, fill req.session
+		req.session = { username: 'mono' }
 	})
 }

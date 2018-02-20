@@ -10,8 +10,9 @@ module.exports = [
 		method: 'get',
 		path: '/secret',
 		apiKey: true,
+		session: true, // Should not go inside since apiKey will run first and fill req.session
 		handler(req, res) {
-			res.json({ secret: 'world' })
+			res.json(req.session)
 		}
 	},
 	{

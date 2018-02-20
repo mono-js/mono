@@ -18,10 +18,16 @@ test('Start fixtures/sessions/', async (t) => {
 /*
 ** Route with session: true
 */
-test('GET - /me -> 401', async (t) => {
+test('GET - /me (session: true) -> 401', async (t) => {
 	const { statusCode, body } = await $get('/me')
 	t.is(statusCode, 401)
 	t.is(body.code, 'credentials-required')
+})
+
+test('GET - /lazy-me (session: optional) -> 200', async (t) => {
+	const { statusCode, body } = await $get('/lazy-me')
+	t.is(statusCode, 200)
+	t.deepEqual(body, { connected: false })
 })
 
 // Close the server

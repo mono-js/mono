@@ -38,7 +38,7 @@ test('GET - /secret?apiKey=bad -> 401 - invalid-api-key', async (t) => {
 test('GET - /secret?apiKey=secret -> 200', async (t) => {
 	const { statusCode, body } = await $get('/secret?apiKey=secret')
 	t.is(statusCode, 200)
-	t.is(body.secret, 'world')
+	t.deepEqual(body, { username: 'mono' })
 })
 test('GET - /super-secret -> { found: "me" }', async (t) => {
 	const { statusCode, body } = await $get('/super-secret')
