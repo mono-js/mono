@@ -4,7 +4,7 @@
 
 - Guide
   - [:busstop: Routes](routes.md)
-  - [:bust_in_silhouette: Sessions](session.md)
+  - [:bust_in_silhouette: Sessions](sessions.md)
   - [:lock: ACL](acl.md)
   - [:seedling: Init files](init-files.md)
   - [:bookmark_tabs: Logging](logging.md)
