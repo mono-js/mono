@@ -3,6 +3,7 @@ const { join } = require('path')
 
 const { start, stop, $get } = require('mono-test-utils')
 const monoPath = join(__dirname, '..')
+const pkg = require('../package.json')
 
 let ctx
 
@@ -27,7 +28,11 @@ test('Start the server and log whats happening', async (t) => {
 test('GET /_ => @terrajs/mono', async (t) => {
 	const { statusCode, body, stdout, stderr } = await $get('/_')
 	t.is(statusCode, 200)
-	t.is(body, '@terrajs/mono')
+	t.deepEqual(body, {
+		name: pkg.name,
+		version: pkg.version,
+		env: 'test'
+	})
 	t.is(stderr.length, 0)
 	t.is(stdout.length, 1)
 	t.true(stdout[0].includes('GET /_'))
@@ -40,13 +45,6 @@ test('GET /_ping => pong', async (t) => {
 	t.is(stderr.length, 0)
 	t.is(stdout.length, 1)
 	t.true(stdout[0].includes('GET /_ping'))
-})
-
-test('GET /_version => 200 with pkg version', async (t) => {
-	const { statusCode, body } = await $get('/_version')
-	t.is(statusCode, 200)
-	const pkg = require('../package.json')
-	t.is(body, pkg.version)
 })
 
 test('GET /_routes => 200 with routes', async (t) => {
