@@ -6,17 +6,16 @@ Install [Node.js](https://nodejs.org/) (version 8.x.x or higher) if not already 
 
 ## New project
 
-It is recommended to use `create-mono-app`, which helps creating new Mono app in seconds:
+It is recommended to use [create-mono-app](https://github.com/terrajs/create-mono-app), which helps creating new Mono app in seconds:
 
 ```
 npx create-mono-app <my-mono-app>
 ```
 
-If you use npm 5.1 or earlier, you can't use `npx`. Instead, install `create-mono-app` globally:
+If you use `npm` 5.1 or earlier, you can't use `npx`. Instead, install `create-mono-app` globally:
 
 ```
 npm install -g create-mono-app
-
 create-mono-app <my-mono-app>
 ```
 
@@ -42,7 +41,7 @@ npm run dev
 
 In a browser, visit [http://localhost:8000/_](http://localhost:8000/_) to try it out.
 
-Mono comes with some default routes, the documentation is available in [routes.md](routes.md).
+Mono comes with some default routes, the documentation is available in the [routes section](/routes).
 
 ## Starter project
 
@@ -50,7 +49,7 @@ By using `create-mono-app`, you make sure to have all the necessary tools to sta
 
 ### Scripts
 
-Mono CLI creates a default `package.json` with some scripts:
+It will create a `package.json` with some scripts:
 
 ```js
 {
@@ -68,25 +67,25 @@ Mono CLI creates a default `package.json` with some scripts:
 
 Run `mono` in development mode.
 
-This binary abstracts the creation of a `server.js` entry file
+This binary abstracts the creation of a `server.js` entry file.
 
 #### start
 
-Run `mono` binary in production with NODE_ENV=production using `cross-env` in order to make life easier for Windows users.
+Run `mono` binary in production with `NODE_ENV=production` using `cross-env` in order to make life easier for Windows users.
 
 #### lint
 
-Run ESLint in your code based in `src/`, `conf/` and `test/`.
+Run [ESLint](https://eslint.org) in your code based in `src/`, `conf/` and `test/`.
 
 #### test
 
 Run the tests with coverage.
 
-The CLI will setup all you need to have to start testing right away with `ava`, `nyc` and `codecov`.
+The CLI will setup all you need to have to start testing right away with [`ava`](https://github.com/avajs/ava) and [`nyc`](https://github.com/istanbuljs/nyc) to have coverage report when the tests are done.
 
 #### coverage
 
-Run the coverage and uses `codecov` to upload it.
+Run the coverage and uses and [`codecov`](https://github.com/codecov/codecov-node) to upload it to [Codecov.io](https://codecov.io).
 
 ### Modules
 
@@ -94,7 +93,6 @@ Mono offers a module system to plug any functionality in your project.
 
 You can see the full list of modules [here](modules.md).
 
-When you create your app with the CLI, it asks you if you want to use MongoDB, which is
 
 ### Exemples
 
