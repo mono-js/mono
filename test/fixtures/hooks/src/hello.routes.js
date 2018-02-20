@@ -13,5 +13,12 @@ module.exports = [
 		handler(req, res) {
 			res.json({ secret: 'world' })
 		}
+	},
+	{
+		method: 'get',
+		path: '/super-secret', // handled by hooks.init.js
+		handler(req, res) {
+			res.json({ secret: 'world' })
+		}
 	}
 ]

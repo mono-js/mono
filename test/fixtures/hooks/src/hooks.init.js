@@ -6,4 +6,9 @@ module.exports = ({ hook }) => {
 	hook('ready', () => {
 		throw new Error('Hello')
 	})
+
+	// Send response
+	hook('onRequest', (route, req, res) => {
+		if (req.url === '/super-secret') return res.json({ found: 'me' })
+	})
 }
