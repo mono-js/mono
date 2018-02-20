@@ -52,18 +52,11 @@ By using `create-mono-app`, you make sure to have all the necessary tools to sta
 It structurates your project as follows:
 
 ```
-├── .editorconfig
-├── .eslintrc.json
-├── .gitignore
-├── .travis.yml
-├── README.md
 ├── conf
 │   ├── application.js
 │   ├── development.js
 │   ├── production.js
 │   └── test.js
-├── package-lock.json
-├── package.json
 ├── src
 │   ├── hello
 │   │   ├── hello.acl.js
@@ -76,6 +69,13 @@ It structurates your project as follows:
 │       └── todos.validation.js
 └── test
     └── api.test.js
+├── .editorconfig
+├── .eslintrc.json
+├── .gitignore
+├── .travis.yml
+├── package-lock.json
+├── package.json
+├── README.md
 ```
 
 ### Conf
@@ -88,7 +88,7 @@ The documentation is available in the [configuration section](/configuration).
 
 It will create a `package.json` with some scripts:
 
-```js
+```json
 {
   "scripts": {
     "dev": "mono dev",
@@ -118,11 +118,11 @@ Run [ESLint](https://eslint.org) in your code based in `src/`, `conf/` and `test
 
 Run the tests with coverage.
 
-The CLI will setup all you need to have to start testing right away with [`ava`](https://github.com/avajs/ava) and [`nyc`](https://github.com/istanbuljs/nyc) to have coverage report when the tests are done.
+The CLI will setup all you need to have to start testing right away with [ava](https://github.com/avajs/ava) and [nyc](https://github.com/istanbuljs/nyc) to have coverage report when the tests are done.
 
 #### coverage
 
-Run the coverage and uses and [`codecov`](https://github.com/codecov/codecov-node) to upload it to [Codecov.io](https://codecov.io).
+Run the coverage and uses and [codecov](https://github.com/codecov/codecov-node) to upload it to [Codecov.io](https://codecov.io).
 
 ### Modules
 
