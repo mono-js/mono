@@ -27,5 +27,13 @@ module.exports = [
 		handler() {
 			throw new HttpError('hello-error')
 		}
+	},
+	{
+		method: 'get',
+		path: '/hello-production',
+		env: 'production',
+		handler(req, res) {
+			res.json({ production: true })
+		}
 	}
 ]

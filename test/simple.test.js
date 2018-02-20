@@ -61,6 +61,12 @@ test('GET /404 => 404 status code', async (t) => {
 	t.is(body.context.url, '/404')
 })
 
+test('GET /hello-production => 404 status code (env defined)', async (t) => {
+	const { statusCode, body } = await $get('/hello-production')
+	t.is(statusCode, 404)
+	t.is(body.code, 'not-found')
+})
+
 test.after('Close the server', async () => {
 	await stop(ctx.server)
 })
