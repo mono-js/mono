@@ -36,6 +36,8 @@ module.exports = [
 
 * `can`: Secures a route by checking user's actions. Must be an action or an array of action. Set `session` to `required`. See documentation [here](acl.md).
 
+* `env`:
+
 * `documentation`: Object to describe the route in order to be displayed in [mono-doc](https://github.com/terrajs/mono-doc) (alias `doc`). See documentation [here](documentation.md).
 
 Example with async await:
