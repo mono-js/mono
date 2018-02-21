@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30934843-1ffda8d8-a3cf-11e7-9c01-dd043e31e89b.png" width="350" alt="Mono"/></h1>
 
-> Mono is a REST API Framework for node.js
+> Mono is an opinionated REST API Framework for Node.js based on Express.js
 
 [![npm version](https://img.shields.io/npm/v/@terrajs/mono.svg)](https://www.npmjs.com/package/@terrajs/mono)
 [![Travis](https://img.shields.io/travis/terrajs/mono/master.svg)](https://travis-ci.org/terrajs/mono)
@@ -63,3 +63,7 @@ Mono offers a module system to plug any functionality in your project:
 ## Credits
 
 Logo created by Frederick Allen from the Noun Project.
+
+## License
+
+MIT &copy; [terrajs](https://github.com/terrajs)
