@@ -4,7 +4,15 @@ Every REST API needs to have environment-based configuration in order to be depl
 
 That's why Mono handles it for you with it's built-in configuration system.
 
-You project configuration should be inside the `conf/` directory.
+## Utilisation
+
+You can use `conf` anywhere in your code. You just have to require `mono`:
+
+```js
+const { conf } = require('@terrajs/mono')
+```
+
+## Structure
 
 By default, Mono will look in the `conf/` directory. This setting can be override with the `MONO_CONF_PATH` environment variable.
 
@@ -21,6 +29,8 @@ conf/
 
 Mono uses a merge recursive strategy to generate your conf.
 
+## Inheritance
+
 Mono will load and merge these files in this order:
 
 ```js
@@ -29,7 +39,7 @@ conf/${process.env.NODE_ENV}.js
 conf/local.js (should be inside .gitignore)
 ```
 
-All these files should export an Object, to configure Mono, use the `mono` property.
+All these files should export an `Object`, to configure Mono, use the `mono` property.
 
 Firstly, it will load the `application.js` which should contain the global conf of your app.
 
@@ -50,6 +60,8 @@ This merge results in a conf object including some useful keys:
   version: pkg.version
 }
 ```
+
+## Mono
 
 Mono uses a `mono` key in your conf which is by default in `application.js`:
 
@@ -81,10 +93,9 @@ module.exports = {
 
 Those examples show configurations files using the [mono-mongodb](https://github.com/terrajs/mono-mongodb) module.
 
-You can use your `conf` anywhere in your code. You just have to require `mono`:
+Here is the documentation for the configuration of the different features:
 
-```js
-const { conf } = require('@terrajs/mono')
-
-console.log(conf.mono.version)
-```
+* [Http](/http?id=configuration)
+* [Logging](/logging?id=configuration)
+* [Sessions](/sessions?id=configuration)
+* [Modules](/modules?id=configuration)

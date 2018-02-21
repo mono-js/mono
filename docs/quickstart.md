@@ -128,7 +128,7 @@ Run the coverage and uses and [codecov](https://github.com/codecov/codecov-node)
 
 Mono offers a module system to plug any functionality in your project.
 
-When you create your app with the CLI, it asks you if you want to use MongoDB, which is one the mono modules, so you can see how easily modules integrates with mono.
+When you create your app with the CLI, it asks you if you want to use MongoDB, which is one of the official mono modules, so you can see how easily modules integrates with mono.
 
 ### Examples
 

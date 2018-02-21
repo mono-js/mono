@@ -4,6 +4,8 @@ Most of the time, a REST API needs to protect resources by authentification acce
 
 ACL are quite complicated to setup, and most of librairies do not meet specific needs of REST APIs. That's why we developed [Imperium](https://github.com/terrajs/imperium), which is quite generic and answer all of our needs. Imperium is fully integrated within Mono and provide users with powerful acls.
 
+## Utilisation
+
 You can use `imperium` anywhere in your code. You just have to require `mono`:
 
 ```js
@@ -21,7 +23,7 @@ const { imperium } = require('@terrajs/mono')
 
 imperium.role('admin', (req) => !!req.session.admin)
 imperium.role('user', async (req) => {
-	return { user: req.session.userId }
+  return { user: req.session.userId }
 })
 ```
 

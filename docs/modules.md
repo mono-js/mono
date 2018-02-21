@@ -1,6 +1,23 @@
 # Mono Modules
 
-Mono offers a module system to plug any functionality in your project:
+Mono offers a module system to plug any functionality in your project.
+
+## Configuration
+
+> Mono HTTP configuration in `conf.mono.modules`
+
+- Type: `array`
+- Default: `[]`
+
+Modules to use with Mono, it can be the name of a node module or an absolute path to a directory.
+
+See for example [mono-mongodb](https://github.com/terrajs/mono-mongodb).
+
+## Create a module
+
+In order to create a new Mono module, we made things as easy as possible with [create-mono-module](https://github.com/terrajs/create-mono-module).
+
+## Official modules
 
 
 | Logo | Name | Description | Github |
