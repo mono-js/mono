@@ -21,14 +21,22 @@ module.exports = [
 ## Declaration
 
 * `method` **(required)**: The HTTP VERB of the route, can be one of the following: `GET`, `POST`, `PUT`, `DELETE`, ... It can be specified in uppercase or lowercase. It could also be an array of methods to create multiple routes.
+
 * `path`**(required)**: The path of the url to match the route. Mono being based on Express 4.x, you can find the full documentation [here](http://expressjs.com/en/guide/routing.html).
+
 * `handler`**(required)**: The function that will handle this request. Mono uses native async/await so you can use it directly. It could also be an array of middlewares. You can find the full documentation of Express on middleware functions [here](http://expressjs.com/en/guide/writing-middleware.html).
-* `version`:
-* `validation`: (alias `validate`)
-* `session`: See documentation [here](sessions.md).
-* `is`: See ACL documentation [here](acl.md).
-* `can`: See ACL documentation [here](acl.md).
-* `documentation`: (alias `doc`) Used [here](documentation.md).
+
+* `version`: The version used to prefix the route, like `v1`, `v2`, ... or `*` to match all.
+
+* `validation`: Takes a [joi](https://github.com/hapijs/joi) object and uses [express-validation](https://github.com/andrewkeig/express-validation) (alias `validate`).
+
+* `session`: Can be set to `true`, `required` or `load` to populate the `req.session` without throwing an error. See documentation [here](sessions.md).
+
+* `is`: Secures a route by checking user's role. Must be a string or an array of string. Set `session` to `required`. See documentation [here](acl.md).
+
+* `can`: Secures a route by checking user's actions. Must be an action or an array of action. Set `session` to `required`. See documentation [here](acl.md).
+
+* `documentation`: Object to describe the route in order to be displayed in [mono-doc](https://github.com/terrajs/mono-doc) (alias `doc`). See documentation [here](documentation.md).
 
 Example with async await:
 
@@ -59,9 +67,46 @@ module.exports = [
       checkUser,
       sayHello
     ]
+  },
+  {
+    method: 'POST',
+    path: '/hello',
+    handler: [
+      checkUser,
+      async (req, res) => {
+        res.json({ hello: 'world' })
+      }
+    ]
   }
 ]
 ```
+
+Example with version, validation and documentation:
+
+```js
+const controller = require('./auth.controller')
+
+module.exports = [
+  {
+    method: 'GET',
+    path: '/auth/callback',
+    handler: controller.authenticate,
+    version: 'v1',
+    validation: {
+      query: Joi.object().keys({
+        code: Joi.string().required(),
+        host: Joi.string().required()
+      })
+    },
+    documentation: {
+      name: 'Github Callback',
+      description: 'This is an auth url'
+    }
+  }
+]
+```
+
+See example with acl imperium `can` and `is` [here](/acl?id=middleware)
 
 ## Built-in routes
 

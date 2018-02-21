@@ -4,7 +4,7 @@ Every REST API needs to have environment-based configuration in order to be depl
 
 That's why Mono handles it for you with it's built-in configuration system.
 
-## Utilisation
+## Usage
 
 You can use `conf` anywhere in your code. You just have to require `mono`:
 

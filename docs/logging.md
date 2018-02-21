@@ -2,7 +2,7 @@
 
 Since logs are a must-have for a REST API, Mono integrates logging thanks to [winston](https://github.com/winstonjs/winston).
 
-## Utilisation
+## Usage
 
 You can use `log` anywhere in your code. You just have to require `mono`:
 
