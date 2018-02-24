@@ -47,13 +47,6 @@ test('GET /_ping => pong', async (t) => {
 	t.true(stdout[0].includes('GET /_ping'))
 })
 
-test('GET /_routes => 200 with routes', async (t) => {
-	const { statusCode, body } = await $get('/_routes')
-	t.is(statusCode, 200)
-	t.true(Array.isArray(body))
-	t.true(body.length > 0)
-})
-
 test('GET /404 => 404 status code', async (t) => {
 	const { statusCode, body } = await $get('/404')
 	t.is(statusCode, 404)
