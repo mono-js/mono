@@ -10,6 +10,7 @@ let ctx
 test('Start the server and log whats happening', async (t) => {
 	ctx = await start(join(__dirname, 'fixtures/simple'), { monoPath })
 	const stdout = ctx.stdout.join('\n')
+
 	t.true(stdout.includes('Environment: test'))
 	t.true(stdout.includes('Loading conf/application.js'))
 	t.true(stdout.includes('Boot db module'))
@@ -22,11 +23,9 @@ test('Start the server and log whats happening', async (t) => {
 	t.true(stdout.includes('Server running on'))
 })
 
-/*
-** Informations routes
-*/
 test('GET /_ => @terrajs/mono', async (t) => {
 	const { statusCode, body, stdout, stderr } = await $get('/_')
+
 	t.is(statusCode, 200)
 	t.deepEqual(body, {
 		name: pkg.name,
@@ -40,6 +39,7 @@ test('GET /_ => @terrajs/mono', async (t) => {
 
 test('GET /_ping => pong', async (t) => {
 	const { statusCode, body, stdout, stderr } = await $get('/_ping')
+
 	t.is(statusCode, 200)
 	t.is(body, 'pong')
 	t.is(stderr.length, 0)
@@ -49,6 +49,7 @@ test('GET /_ping => pong', async (t) => {
 
 test('GET /404 => 404 status code', async (t) => {
 	const { statusCode, body } = await $get('/404')
+
 	t.is(statusCode, 404)
 	t.is(body.code, 'not-found')
 	t.is(body.context.url, '/404')
@@ -56,17 +57,22 @@ test('GET /404 => 404 status code', async (t) => {
 
 test('GET /hello-error => 500 status code', async (t) => {
 	const { statusCode, body } = await $get('/hello-error')
+
 	t.is(statusCode, 500)
 	t.is(body.code, 'hello-error')
 	t.deepEqual(body.context, {})
 })
+
 test('GET /hello-dev-test => 200 status code', async (t) => {
 	const { statusCode, body } = await $get('/hello-dev-test')
+
 	t.is(statusCode, 200)
 	t.deepEqual(body, { hello: true })
 })
+
 test('GET /hello-production => 404 status code (env defined)', async (t) => {
 	const { statusCode, body } = await $get('/hello-production')
+
 	t.is(statusCode, 404)
 	t.is(body.code, 'not-found')
 })

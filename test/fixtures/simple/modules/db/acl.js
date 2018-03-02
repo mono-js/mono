@@ -11,6 +11,7 @@ imperium.role('admin', (req) => {
 // Set actions
 imperium.role('user')
 	.can('seeUser', { user: '@' })
+	.can('knowBatman', { user: 'batman' })
 
 imperium.role('admin')
 	.is('user', { user: '*' })

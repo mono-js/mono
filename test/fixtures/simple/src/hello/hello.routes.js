@@ -43,5 +43,37 @@ module.exports = [
 		handler(req, res) {
 			res.json({ production: true })
 		}
+	},
+	{
+		method: 'get',
+		path: '/acl/bad',
+		can: 'seeSomething',
+		handler(req, res) {
+			res.sendStatus(200)
+		}
+	},
+	{
+		method: 'get',
+		path: '/acl/batman',
+		can: { action: 'knowBatman', user: 'batman' },
+		handler(req, res) {
+			res.sendStatus(200)
+		}
+	},
+	{
+		method: 'get',
+		path: '/acl/:userId',
+		can: { action: 'knowBatman', user: ':userId' },
+		handler(req, res) {
+			res.sendStatus(200)
+		}
+	},
+	{
+		method: 'get',
+		path: '/acl/:batman',
+		can: { action: 'knowBatman', user: 'batman' },
+		handler(req, res) {
+			res.sendStatus(200)
+		}
 	}
 ]
