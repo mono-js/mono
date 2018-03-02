@@ -27,7 +27,9 @@ test('Check conf with NODE_ENV=test', async (t) => {
 	t.deepEqual(conf.mono.jwt, {
 		headerKey: 'Authorization',
 		secret: 'secret',
-		expiresIn: '7d'
+		options: {
+			expiresIn: '7d'
+		}
 	})
 	t.is(conf.test, true)
 

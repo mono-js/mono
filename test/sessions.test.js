@@ -72,7 +72,7 @@ test('GET - /session with bad token -> 401', async (t) => {
 
 test('GET - /session with good token but no userId -> 401', async (t) => {
 	const badSession = { noUserId: true }
-	const fakeToken = await cb(jsonwebtoken.sign, badSession, ctx.conf.mono.jwt.secret, { expiresIn: ctx.conf.mono.jwt.expiresIn })
+	const fakeToken = await cb(jsonwebtoken.sign, badSession, ctx.conf.mono.jwt.secret, ctx.conf.mono.jwt.options)
 	const { statusCode, body } = await $get('/session', {
 		headers: { Authorization: `Bearer ${fakeToken}` }
 	})

@@ -1,36 +1,69 @@
 # Sessions
 
+Mono integrates the [Json Web Tokens](http://jwt.io/) standard in its core. So you can easily add any users & session management in your API.
+
 ## Configuration
 
-> Mono JWT configuration in `conf.mono.jwt`
+> Mono JWT configuration
 
-- Type: `object`
-- Default: `{}`
+### `conf.mono.jwt`
 
-  ### secret
+  - Type: `object`
+  - Default: `{}`
 
-  > Secret key to encode the JWT.
+  ### `secret`
 
-  - Type: `string`
-  - Default: `'secret'`
+    Secret key to encode the JWT.
 
-  ### expiresIn
+    - Type: `string`
+    - Default: `'secret'`
 
-  > JWT expiration time, option given directly to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage).
+  ### `headerKey`
 
-  - Type: `number` or `string`
-  - Default: `'7d'`
+    HTTP header key to look for the JWT.
 
-  ### headerKey
+    - Type: `string`
+    - Default: `'Authorization'`
 
-  > HTTP header key to look for the JWT.
+  ### `options`
 
-  - Type: `string`
-  - Default: `'Authorization'`
+    JWT options given to [jwt.sign](https://github.com/auth0/node-jsonwebtoken#usage).
+
+    - Type: `object`
+    - Default: `{}`
+
+      ### `expiresIn`
+
+        - Type: `number` or `string`
+        - Default: `'7d'`
+
+      ### `...`
+
+      _See the full list of options on https://github.com/auth0/node-jsonwebtoken#usage_
+
+## Example
+
+You can customize these settings in `conf/application.js` for example:
+
+```js
+module.exports = {
+  mono: {
+    jwt: {
+      secret: 'my-super-secret-key',
+      options: {
+        algorithm: 'HS384'
+        expiresIn: '1 month'
+      }
+    }
+  }
+}
+```
 
 ## Utils
 
-> JWT utils to create and decode a token
+Mono offers a set of utils to create & decode JWT easily.
+
+### jwt.generateJWT
 
 ```js
 const { jwt } = require('@terrajs/mono')
@@ -38,9 +71,11 @@ const { jwt } = require('@terrajs/mono')
 jwt.generateJWT(session: object): Promise<string>
 ```
 
-`session` must be an `object` with an `userId` property, you can use [jwt conf](#jwt-1) to customize the token behaviour (expiration, secret key).
+**`session` must be an `object` with an `userId` property**.
 
-Example:
+You can use [jwt conf](/sessions?id=configuration) to customize the token behaviour (expiration, secret key).
+
+#### Example:
 
 ```js
 const { jwt } = require('@terrajs/mono')
@@ -48,15 +83,17 @@ const { jwt } = require('@terrajs/mono')
 const token = await jwt.generateJWT({ userId: 1, username: 'TerraJS' })
 ```
 
+### jwt.loadSession
+
 ```js
 const { jwt } = require('@terrajs/mono')
 
-jwt.loadSession(req, [getToken: function]): Promise<object>
+jwt.loadSession(req, [getJWT: function]): Promise<object>
 ```
 
-`req` must be the Express request. `getToken` is optionnal, if defined it will be called with `req` and should return the `token` to decode.
+`req` must be the Express request. `getJWT` is optionnal, if defined it will be called with `req` and should return the `token` to decode.
 
-Example:
+#### Example:
 
 ```js
 const { jwt } = require('@terrajs/mono')
