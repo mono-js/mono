@@ -7,11 +7,13 @@
 [![Coverage](https://img.shields.io/codecov/c/github/terrajs/mono/master.svg)](https://codecov.io/gh/terrajs/mono)
 [![license](https://img.shields.io/github/license/terrajs/mono.svg)](https://github.com/terrajs/mono/blob/master/LICENSE.md)
 
-## What is it
+## What is it?
 
-It is an opinionated web framework to build REST API by following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
+It is an opinionated web framework based on Express.js to build API by following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
 
-See the [Quick start](quickstart.md) for more details.
+Since it uses Express under the hood, you can use [any express middleware](https://www.npmjs.com/search?q=express%20middleware&page=1&ranking=optimal) into your Mono app.
+
+See the [Quick start](quickstart.md) section to get started.
 
 ## Features
 

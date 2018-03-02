@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Install [Node.js](https://nodejs.org/) (version 8.x.x or higher) if not already installed on your machine to use Mono since it uses native async/await.
+You need [node](https://nodejs.org/) `>= 8.6.0` to use Mono since it uses native `async`/`await`.
 
 ## New project
 
@@ -41,7 +41,7 @@ npm run dev
 
 In a browser, visit [http://localhost:8000/_](http://localhost:8000/_) to try it out.
 
-Mono comes with some default routes, the documentation is available in the [routes section](/routes).
+Mono comes with some built-in routes, the documentation is available in the [routes section](/routes?id=built-in-routes).
 
 ## Starter project
 

@@ -1,10 +1,12 @@
 # Routes
 
-In order to define the routes of your REST API application, you just need to create `.routes.js` files.
+In order to define the routes of your API, you simply need to create a `.routes.js` file.
 
 Mono will load automatically every routes files of your application in `src/**/*.routes.js` to create valid Express routes.
 
-A route file needs to export an array of objects with specific keys. Here is an example of a basic route:
+A route file **needs to export an array of objects** with specific keys.
+
+Here is an example of a basic route (`src/hello.routes.js`):
 
 ```js
 module.exports = [
@@ -20,27 +22,27 @@ module.exports = [
 
 ## Declaration
 
-* `method` **(required)**: The HTTP VERB of the route, can be one of the following: `GET`, `POST`, `PUT`, `DELETE`, ... It can be specified in uppercase or lowercase. It could also be an array of methods to create multiple routes.
+* `method` **(required)**: The HTTP verb of the route, can be one of the following: `GET`, `POST`, `PUT`, `DELETE`, etc. It can be specified in uppercase or lowercase. _It could also be an array of methods to create multiple routes._
 
 * `path`**(required)**: The path of the url to match the route. Mono being based on Express 4.x, you can find the full documentation [here](http://expressjs.com/en/guide/routing.html).
 
-* `handler`**(required)**: The function that will handle this request. Mono uses native async/await so you can use it directly. It could also be an array of middlewares. You can find the full documentation of Express on middleware functions [here](http://expressjs.com/en/guide/writing-middleware.html).
+* `handler`**(required)**: The function that will handle the request. Mono uses native `async`/`await` so you can use it directly. It could also be an array of middlewares. You can find the full documentation of Express on middleware functions [here](http://expressjs.com/en/guide/writing-middleware.html).
 
-* `version`: The version used to prefix the route, like `v1`, `v2`, ... or `*` to match all.
+* `version`: The version used to prefix the route, like `v1`, `v2`, ... or `*` (default) to match all.
 
 * `validation`: Takes a [joi](https://github.com/hapijs/joi) object and uses [express-validation](https://github.com/andrewkeig/express-validation) (alias `validate`).
 
-* `session`: Can be set to `true`, `required` or `load` to populate the `req.session` without throwing an error. See documentation [here](sessions.md).
+* `session`: Can be set to `true`, `false` or `optionnal` (to populate the `req.session` without throwing an error). See documentation [here](sessions.md).
 
-* `is`: Secures a route by checking user's role. Must be a string or an array of string. Set `session` to `required`. See documentation [here](acl.md).
+* `is`: Secures a route by checking user's role. Must be a string or an array of string. Force `session` to `true` when defined. See documentation [here](acl.md).
 
-* `can`: Secures a route by checking user's actions. Must be an action or an array of action. Set `session` to `required`. See documentation [here](acl.md).
+* `can`: Secures a route by checking user's actions. Must be an action or an array of action. Force `session` to `true`. See documentation [here](acl.md).
 
-* `env`:
+* `env`: Node environment (`NODE_ENV`) where the route should be defined (default to `'*'`). Useful to add routes for development and testing purpose.
 
 * `documentation`: Object to describe the route in order to be displayed in [mono-doc](https://github.com/terrajs/mono-doc) (alias `doc`). See documentation [here](documentation.md).
 
-Example with async await:
+Example with `async`/`await`:
 
 ```js
 module.exports = [
@@ -90,6 +92,7 @@ const controller = require('./auth.controller')
 
 module.exports = [
   {
+    // Will be accessible with /v1/auth/callback
     method: 'GET',
     path: '/auth/callback',
     handler: controller.authenticate,
@@ -108,12 +111,12 @@ module.exports = [
 ]
 ```
 
-See example with acl imperium `can` and `is` [here](/acl?id=middleware)
+See example with `can` and `is` [here](/acl?id=middleware).
 
 ## Built-in routes
 
 Mono also has some built-in routes:
 
 * `/_` => Returns the informations of your app stored in conf: `name`, `version` and `env`
-* `/_ping` => Returns 'pong'
+* `/_ping` => Returns `'pong'` with a `200` status code
 * `/_routes` => Returns an array of all the routes of your API (useful for [api documentation](mono-doc.md))
