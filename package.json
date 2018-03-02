@@ -56,7 +56,7 @@
     "jsonwebtoken": "^8.1.1",
     "lodash": "^4.17.5",
     "morgan": "^1.9.0",
-    "nodemon": "^1.15.1",
+    "nodemon": "^1.17.1",
     "sywac": "^1.2.0",
     "winston": "^2.4.0"
   },
@@ -64,7 +64,7 @@
     "ava": "^0.25.0",
     "codecov": "^3.0.0",
     "docsify-cli": "^4.2.0",
-    "eslint": "^4.18.0",
+    "eslint": "^4.18.1",
     "ip": "^1.1.5",
     "mono-test-utils": "^1.2.3",
     "nyc": "^11.4.1",
