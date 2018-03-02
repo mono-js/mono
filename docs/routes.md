@@ -119,4 +119,3 @@ Mono also has some built-in routes:
 
 * `/_` => Returns the informations of your app stored in conf: `name`, `version` and `env`
 * `/_ping` => Returns `'pong'` with a `200` status code
-* `/_routes` => Returns an array of all the routes of your API (useful for [api documentation](mono-doc.md))
