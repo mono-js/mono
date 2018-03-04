@@ -1,3 +1,3 @@
-# Hooks
+# Deploying
 
 _Coming soong_
