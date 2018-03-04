@@ -30,9 +30,11 @@ Then answer the prompts as follows:
 
 It will setup your project, initialize a git repository and install all the required dependencies.
 
-## Starting the project
+> By using `create-mono-app`, you make sure to have all the necessary tools to start building your Web API without any configuration following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
 
-Let's start your newly created Mono application:
+### Starting the project
+
+Let's start our newly created Mono application:
 
 ```
 cd <my-mono-app>
@@ -43,11 +45,7 @@ In a browser, visit [http://localhost:8000/_](http://localhost:8000/_) to try it
 
 Mono comes with some built-in routes, the documentation is available in the [routes section](/routes?id=built-in-routes).
 
-## Starter project
-
-By using `create-mono-app`, you make sure to have all the necessary tools to start building your REST API without any configuration following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
-
-### Tree Structure
+## Tree Structure
 
 It structurates your project as follows:
 
@@ -78,11 +76,19 @@ It structurates your project as follows:
 ├── README.md
 ```
 
-### Conf
+#### conf/
 
-A basic conf is generated, so you can start add your own right away.
+This is where your app configuration lives, a basic config is already generated, so you can update it right away.
 
 The documentation is available in the [configuration section](/configuration).
+
+#### src/
+
+This is where you will write your API routes, controllers, services and awesome features.
+
+You can take a look at the different file types documentation:
+
+- [*.routes.js](/routes)
 
 ### Scripts
 
@@ -100,6 +106,8 @@ It will create a `package.json` with some scripts:
 }
 ```
 
+## Mono Commands
+
 #### dev
 
 Run `mono` in development mode.
@@ -112,7 +120,7 @@ Run `mono` binary in production with `NODE_ENV=production` using `cross-env` in 
 
 #### lint
 
-Run [ESLint](https://eslint.org) in your code based in `src/`, `conf/` and `test/`.
+Run [ESLint](https://eslint.org) in your code located in `src/`, `conf/` and `test/` directories.
 
 #### test
 
