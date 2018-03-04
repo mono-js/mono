@@ -41,29 +41,32 @@ conf/local.js (should be inside .gitignore)
 
 All these files should export an `Object`, to configure Mono, use the `mono` property.
 
-Firstly, it will load the `application.js` which should contain the global conf of your app.
+Firstly, it will load `application.js` which should contains the global conf of your app.
 
-Then, it will load file matching your current env `development.js`, `staging.js`, `production.js`, `test.js`, ... You are free to name your conf files according to your own environment names. This file should contain environment-based conf of your app like databases urls, log levels, ...
+Then, it will load file matching your current env `development.js`, `staging.js`, `production.js`, `test.js`, etc. You are free to name your conf files according to your own environment names. This file should contain environment-based configuration of your app like databases urls, log levels, http port, etc.
 
-And last but not least, it will load only if it exists the optional `local.js` file, which is really useful when you're multiple developers working on the same API. Our advice is to add this file in your `.gitignore`. It allows every developer to have their own specific conf but also to keep private conf like api and secret keys out of git.
+And last but not least, it will load only if it exists the optional `local.js` file, which is really useful when you're a team of developers working on the same API. Our advice is to add this file in your `.gitignore`. It allows every developer to have their own specific configuration but also to keep private data like api and secret keys out of git.
 
-The conf object will automatically be populated with some vars so you can access those directly in your code.
+The `conf` object will automatically be populated with some vars so you can access those directly in your code.
 
 So at the end `local.js` will be merged in the environment conf file like `development.js` which will be merged in `application.js`.
 
-This merge results in a conf object including some useful keys:
+On top of this, Mono will add some useful keys into the `conf` object:
 
 ```js
 {
   env: process.env.NODE_ENV || 'development',
   name: pkg.name,
-  version: pkg.version
+  version: pkg.version,
+  appDir: '/path/to/your/mono-project'
 }
 ```
 
+Where `pkg` is your project `package.json`.
+
 ## Mono
 
-Mono uses a `mono` key in your conf which is by default in `application.js`:
+Mono uses the `mono` key in your configuration object to configure itself:
 
 ```js
 module.exports = {
@@ -79,7 +82,7 @@ module.exports = {
 }
 ```
 
-So, `application.js` is used for global conf, as mentioned above, you should use environment-based files for specific conf like `development.js`:
+`application.js` is used for global config, as mentioned above, you should use environment-based files for specific config like `development.js`:
 
 ```js
 module.exports = {
@@ -91,9 +94,9 @@ module.exports = {
 }
 ```
 
-Those examples show configurations files using the [mono-mongodb](https://github.com/terrajs/mono-mongodb) module.
+The last example shows an environment based configuration for the [mono-mongodb](https://github.com/terrajs/mono-mongodb) module.
 
-Here is the documentation for the configuration of the different features:
+Here is the documentation for the configuration of the different Mono features:
 
 * [Http](/http?id=configuration)
 * [Logging](/logging?id=configuration)
