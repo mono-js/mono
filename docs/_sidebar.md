@@ -8,7 +8,6 @@
   - [ACL](acl.md)
   - [Init files](init-files.md)
   - [Logging](logging.md)
-  - [Hooks](hooks.md)
   - [Http](http.md)
   - [Utils](utils.md)
   - [Modules](modules.md)
@@ -18,6 +17,10 @@
   - [Documentation](documentation.md)
   - [Deploying](deploying.md)
 
-- [Releases](https://github.com/terrajs/mono/releases)
+- Advanced
+  - [Hooks](hooks.md)
+  - [Use programmatically](mono.md)
 
-- [Contributors](https://github.com/terrajs/mono/graphs/contributors)
+- Mono
+  - [Releases](https://github.com/terrajs/mono/releases)
+  - [Contributors](https://github.com/terrajs/mono/graphs/contributors)
