@@ -49,7 +49,7 @@ module.exports = [
 Then, by running `curl`:
 
 ```bash
-$ curl -i http://localhost:8000/awesome-feature
+curl -i http://localhost:8000/awesome-feature
 
 HTTP/1.1 501 Not Implemented
 Content-Type: application/json; charset=utf-8

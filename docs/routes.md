@@ -38,7 +38,10 @@ module.exports = [
   Takes a [joi](https://github.com/hapijs/joi) object and uses [express-validation](https://github.com/andrewkeig/express-validation).
 
 * `session`<br>
-  Can be set to `true`, `false` or `optionnal` (to populate the `req.session` without throwing an error). See documentation [here](sessions.md).
+  Can be set to `true`, `false` or `'optionnal'` (to populate the `req.session` without throwing an error). See documentation [here](sessions.md).
+
+* `getJWT`<br>
+  Customize where to fetch the token inside the request (default to the `Authorization` header), has to be used with the `session` key. It's useful when you want to give a token by email to log-in the user to your app.
 
 * `is`<br>
   Secures a route by checking user's role. Must be a string or an array of string. Force `session` to `true` when defined. See documentation [here](acl.md).
