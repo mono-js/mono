@@ -1,6 +1,6 @@
 # Logging
 
-Since logs are a must-have for a REST API, Mono integrates logging thanks to [winston](https://github.com/winstonjs/winston).
+Logs are a must-have for any Web API. Mono integrates logging thanks to [winston](https://github.com/winstonjs/winston).
 
 ## Usage
 
@@ -25,54 +25,56 @@ setTimeout(() => log.profile('test'), 1000)
 
 ## Configuration
 
-> Mono logs configuration in `conf.mono.log`
+> Mono logs configuration
 
-- Type: `object`
-- Default: `{}`
+### `conf.mono.log`
 
-  ### level
+  - Type: `object`
+  - Default: `{}`
 
-  > Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable.
+  ### `level`
 
-  - Type: `string`
-  - Default: `'verbose'`
-  - Available values: `'verbose'`, `'debug'`, `'info'`, `'warn'`, `'error'`
+    > Log level to write, can be overwritten by `MONO_LOG_LEVEL` environment variable.
 
-  ### console
+    - Type: `string`
+    - Default: `'verbose'`
+    - Available values: `'verbose'`, `'debug'`, `'info'`, `'warn'` or `'error'`
 
-  > Write logs in the console (stdout and stderr).
+  ### `console`
 
-  - Type: `boolean`
-  - Default: `true`
+    > Write logs in the console (stdout and stderr).
 
-  ### files
+    - Type: `boolean`
+    - Default: `true`
 
-  > Write logs in file(s).
+  ### `files`
 
-  - Type: `array`
-  - Default: `[]`
+    > Write logs in file(s).
 
-  Properties:
-  - filename: `string`, **required**, path to log file.
-  - level: `string`, *optional*, default to `log.level`, log level to write in file.
-  - See [winston file transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#file-transport) for the full list of properties
+    - Type: `array`
+    - Default: `[]`
 
-  ### http
+    Properties:
+      - filename: `string`, **required**, path to log file.
+      - level: `string`, *optional*, default to `log.level`, log level to write in file.
+      - See [winston file transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#file-transport) for the full list of properties
 
-  > Stream logs to an http endpoint.
+  ### `http`
 
-  - Type: `array`
-  - Default: `[]`
+    > Stream logs to an http endpoint.
 
-  Properties:
-  - level: `string`, *optional*, default to `log.level`, log level to write in file.
-  - See [winston http transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#http-transport) for the full list of properties
+    - Type: `array`
+    - Default: `[]`
 
-  ### transports
+    Properties:
+    - level: `string`, *optional*, default to `log.level`, log level to write in file.
+    - See [winston http transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#http-transport) for the full list of properties
 
-  > Use custom Winton tranporter to send logs to.
+  ### `transports`
 
-  - Type: `array`
-  - Default: `[]`
+    > Use custom Winton tranporter to send logs to.
 
-  See [winston custom transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-more) for the full list of properties
+    - Type: `array`
+    - Default: `[]`
+
+    See [winston custom transport](https://github.com/winstonjs/winston/blob/master/docs/transports.md#winston-more) for the full list of properties
