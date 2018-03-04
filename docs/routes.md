@@ -22,25 +22,35 @@ module.exports = [
 
 ## Declaration
 
-* `method` **(required)**: The HTTP verb of the route, can be one of the following: `GET`, `POST`, `PUT`, `DELETE`, etc. It can be specified in uppercase or lowercase. _It could also be an array of methods to create multiple routes._
+* `method` **(required)**<br>
+  The HTTP verb of the route, can be one of the following: `GET`, `POST`, `PUT`, `DELETE`, etc. It can be specified in uppercase or lowercase. _It could also be an array of methods to create multiple routes._
 
-* `path`**(required)**: The path of the url to match the route. Mono being based on Express 4.x, you can find the full documentation [here](http://expressjs.com/en/guide/routing.html).
+* `path`**(required)**<br>
+  The path of the url to match the route. Mono being based on Express 4.x, you can find the full documentation [here](http://expressjs.com/en/guide/routing.html).
 
-* `handler`**(required)**: The function that will handle the request. Mono uses native `async`/`await` so you can use it directly. It could also be an array of middlewares. You can find the full documentation of Express on middleware functions [here](http://expressjs.com/en/guide/writing-middleware.html).
+* `handler`**(required)**<br>
+  The function that will handle the request. Mono uses native `async`/`await` so you can use it directly. It could also be an array of middlewares. You can find the full documentation of Express on middleware functions [here](http://expressjs.com/en/guide/writing-middleware.html).
 
-* `version`: The version used to prefix the route, like `v1`, `v2`, ... or `*` (default) to match all.
+* `version`<br>
+  The version used to prefix the route, like `v1`, `v2`, ... or `*` (default) to match all.
 
-* `validation`: Takes a [joi](https://github.com/hapijs/joi) object and uses [express-validation](https://github.com/andrewkeig/express-validation) (alias `validate`).
+* `validation` _(alias: `validate`)_<br>
+  Takes a [joi](https://github.com/hapijs/joi) object and uses [express-validation](https://github.com/andrewkeig/express-validation).
 
-* `session`: Can be set to `true`, `false` or `optionnal` (to populate the `req.session` without throwing an error). See documentation [here](sessions.md).
+* `session`<br>
+  Can be set to `true`, `false` or `optionnal` (to populate the `req.session` without throwing an error). See documentation [here](sessions.md).
 
-* `is`: Secures a route by checking user's role. Must be a string or an array of string. Force `session` to `true` when defined. See documentation [here](acl.md).
+* `is`<br>
+  Secures a route by checking user's role. Must be a string or an array of string. Force `session` to `true` when defined. See documentation [here](acl.md).
 
-* `can`: Secures a route by checking user's actions. Must be an action or an array of action. Force `session` to `true`. See documentation [here](acl.md).
+* `can`<br>
+  Secures a route by checking user's actions. Must be an action or an array of action. Force `session` to `true`. See documentation [here](acl.md).
 
-* `env`: Node environment (`NODE_ENV`) where the route should be defined (default to `'*'`). Useful to add routes for development and testing purpose.
+* `env`<br>
+  Node environment (`NODE_ENV`) where the route should be defined (default to `'*'`). Useful to add routes for development and testing purpose.
 
-* `documentation`: Object to describe the route in order to be displayed in [mono-doc](https://github.com/terrajs/mono-doc) (alias `doc`). See documentation [here](documentation.md).
+* `documentation` _(alias: `doc`)_<br>
+  Object to describe the route in order to be displayed in [mono-doc](https://github.com/terrajs/mono-doc). See documentation [here](documentation.md).
 
 Example with `async`/`await`:
 
@@ -92,12 +102,12 @@ const controller = require('./auth.controller')
 
 module.exports = [
   {
-    // Will be accessible with /v1/auth/callback
     method: 'GET',
     path: '/auth/callback',
     handler: controller.authenticate,
-    version: 'v1',
+    version: 'v1', // Will be accessible only at /v1/auth/callback
     validation: {
+      // Validate query parameters
       query: Joi.object().keys({
         code: Joi.string().required(),
         host: Joi.string().required()
@@ -105,7 +115,7 @@ module.exports = [
     },
     documentation: {
       name: 'Github Callback',
-      description: 'This is an auth url'
+      description: 'Auth url to get user token'
     }
   }
 ]

@@ -4,7 +4,7 @@ Mono offers a module system to plug any functionality in your project.
 
 ## Configuration
 
-> Mono HTTP configuration in `conf.mono.modules`
+### `conf.mono.modules`
 
 - Type: `array`
 - Default: `[]`
@@ -18,7 +18,6 @@ See for example [mono-mongodb](https://github.com/terrajs/mono-mongodb).
 In order to create a new Mono module, we made things as easy as possible with [create-mono-module](https://github.com/terrajs/create-mono-module).
 
 ## Official modules
-
 
 | Logo | Name | Description | Github |
 |------|------|-------------|---------|
