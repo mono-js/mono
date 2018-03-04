@@ -1,6 +1,6 @@
 ## MONO
 
-> Mono is a REST API Framework for Node.js based on Express.js
+> Mono is a Web API Framework for Node.js based on Express.js
 
 [![npm version](https://img.shields.io/npm/v/@terrajs/mono.svg)](https://www.npmjs.com/package/@terrajs/mono)
 [![Travis](https://img.shields.io/travis/terrajs/mono/master.svg)](https://travis-ci.org/terrajs/mono)
