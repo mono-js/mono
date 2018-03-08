@@ -57,6 +57,7 @@ Mono offers a module system to plug any functionality in your project:
 - [mono-redis](https://github.com/terrajs/mono-redis)
 - [mono-io](https://github.com/terrajs/mono-io)
 - [mono-push](https://github.com/terrajs/mono-push)
+- [mono-mail](https://github.com/terrajs/mono-mail)
 - [mono-notifications](https://github.com/terrajs/mono-notifications)
 - [mono-doc](https://github.com/terrajs/mono-doc)
 
