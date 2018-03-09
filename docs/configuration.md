@@ -14,7 +14,7 @@ const { conf } = require('@terrajs/mono')
 
 ## Structure
 
-By default, Mono will look in the `conf/` directory. This setting can be override with the `MONO_CONF_PATH` environment variable.
+By default, Mono will look in the `conf/` directory. The path can be override with the `MONO_CONF_PATH` environment variable.
 
 A basic conf folder in Mono looks like:
 
