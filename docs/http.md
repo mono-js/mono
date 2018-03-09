@@ -4,7 +4,6 @@ Mono uses Express to create an HTTP server.
 
 To help with security, it integrates by default [helmet](https://github.com/helmetjs/helmet).
 
-
 ## HttpError
 
 Custom error class (extends `Error`), used by Mono for API errors with status code and context.
@@ -73,7 +72,7 @@ Content-Length: 76
     > Log level/format for the HTTP requests, the value will be given to [morgan](https://github.com/expressjs/morgan) middleware. If `false`, no HTTP log will be made.
 
     - Type: `string` or `false`
-    - Default: `'dev'`
+    - Default: `'dev'` in development and `'combined'` in production
 
   ### `port`
 
