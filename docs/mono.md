@@ -1,6 +1,6 @@
 # Use programmatically
 
-Mono can be used programmatically, it's really useful when integrating it with tools like [PM2](https://github.com/Unitech/pm2), [New Relic]() and more.
+Mono can be used programmatically, it's really useful when integrating it with tools like [PM2](https://github.com/Unitech/pm2), [New Relic](https://github.com/newrelic/node-newrelic) and more.
 
 Let's see what mono `exposes` as default:
 
