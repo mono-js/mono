@@ -67,7 +67,7 @@
     "eslint": "4.18.2",
     "ip": "1.1.5",
     "mono-test-utils": "1.2.3",
-    "nyc": "11.4.1",
+    "nyc": "11.6.0",
     "tmp": "0.0.33",
     "winston-elasticsearch": "0.5.7"
   },
