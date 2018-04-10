@@ -18,7 +18,7 @@ See the [Quick start](quickstart.md) section to get started.
 ## Features
 
 * :wrench: Environment based config
-* :book: API Versionning (`v1`, `v2`...)
+* :book: API Versioning (`v1`, `v2`...)
 * :bust_in_silhouette: [Json Web Token](https://jwt.io) sessions
 * :lock: ACL with [Imperium](https://terrajs.org/imperium)
 * :vertical_traffic_light: Routes validation with [joi](https://github.com/hapijs/joi)

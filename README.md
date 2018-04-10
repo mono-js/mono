@@ -10,7 +10,7 @@
 ## Features
 
 - Environment based config
-- API Versionning (`v1`, `v2`...)
+- API Versioning (`v1`, `v2`...)
 - [Json Web Token](https://jwt.io) sessions
 - ACL with [Imperium](https://github.com/terrajs/imperium)
 - Routes validation with [joi](https://github.com/hapijs/joi)
