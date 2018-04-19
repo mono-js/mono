@@ -37,4 +37,4 @@ See the [Modules](modules.md) section for more details.
 |--------|------|--------|---------|
 | ![Atinux](https://avatars1.githubusercontent.com/u/904724?s=50&v=4) | Sebastien Chopin | [Atinux](https://github.com/Atinux) | [Atinux](https://twitter.com/Atinux) |
 | ![benjamincanac](https://avatars1.githubusercontent.com/u/739984?s=50&v=4) | Benjamin Canac | [benjamincanac](https://github.com/benjamincanac) | [benjamincanac](https://twitter.com/benjamincanac) |
-| ![gaetansenn](https://avatars2.githubusercontent.com/u/2774075?s=50&v=4) | Gaetan Senn | [gaetansenn](https://github.com/gaetansenn) | [gaetan_senn](https://twitter.com/gaetan_senn) |
+| ![gaetansenn](https://avatars2.githubusercontent.com/u/2774075?s=50&v=4) | Gaetan Senn | [gaetansenn](https://github.com/gaetansenn) | [gaetansenn](https://twitter.com/gaetansenn) |
