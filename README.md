@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://user-images.githubusercontent.com/904724/30934843-1ffda8d8-a3cf-11e7-9c01-dd043e31e89b.png" width="350" alt="Mono"/></h1>
 
-> Mono is an opinionated REST API Framework for Node.js based on Express.js
+> Mono is a minimalist REST API Framework on top of Express.js
 
 [![npm version](https://img.shields.io/npm/v/mono-core.svg)](https://www.npmjs.com/package/mono-core)
 [![Travis](https://img.shields.io/travis/mono-js/mono/master.svg)](https://travis-ci.org/mono-js/mono)

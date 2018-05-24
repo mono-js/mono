@@ -1,6 +1,6 @@
 ## MONO
 
-> Mono is a Web API Framework for Node.js based on Express.js
+> Mono is a minimalist Web API Framework for Node.js on top of Express.js
 
 [![npm version](https://img.shields.io/npm/v/mono-core.svg)](https://www.npmjs.com/package/mono-core)
 [![Travis](https://img.shields.io/travis/mono-js/mono/master.svg)](https://travis-ci.org/mono-js/mono)
@@ -9,9 +9,9 @@
 
 ## What is it?
 
-It is an opinionated web framework based on Express.js to build API by following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
+It is an minimalist web framework on top of Express.js to build API by following the [best practices](https://github.com/i0natan/nodebestpractices) for Node.js applications.
 
-Since it uses Express under the hood, you can use [any express middleware](https://www.npmjs.com/search?q=express%20middleware&page=1&ranking=optimal) into your Mono app.
+You can use [any express middleware](https://www.npmjs.com/search?q=express%20middleware&page=1&ranking=optimal) into your Mono app.
 
 See the [Quick start](quickstart.md) section to get started.
 
