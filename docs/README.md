@@ -3,9 +3,9 @@
 > Mono is a Web API Framework for Node.js based on Express.js
 
 [![npm version](https://img.shields.io/npm/v/mono-core.svg)](https://www.npmjs.com/package/mono-core)
-[![Travis](https://img.shields.io/travis/terrajs/mono/master.svg)](https://travis-ci.org/terrajs/mono)
-[![Coverage](https://img.shields.io/codecov/c/github/terrajs/mono/master.svg)](https://codecov.io/gh/terrajs/mono)
-[![license](https://img.shields.io/github/license/terrajs/mono.svg)](https://github.com/terrajs/mono/blob/master/LICENSE.md)
+[![Travis](https://img.shields.io/travis/mono-js/mono/master.svg)](https://travis-ci.org/mono-js/mono)
+[![Coverage](https://img.shields.io/codecov/c/github/mono-js/mono/master.svg)](https://codecov.io/gh/mono-js/mono)
+[![license](https://img.shields.io/github/license/mono-js/mono.svg)](https://github.com/mono-js/mono/blob/master/LICENSE.md)
 
 ## What is it?
 
@@ -20,7 +20,7 @@ See the [Quick start](quickstart.md) section to get started.
 * :wrench: Environment based config
 * :book: API Versioning (`v1`, `v2`...)
 * :bust_in_silhouette: [Json Web Token](https://jwt.io) sessions
-* :lock: ACL with [Imperium](https://terrajs.org/imperium)
+* :lock: ACL with [Imperium](https://mono-js.org/imperium)
 * :vertical_traffic_light: Routes validation with [joi](https://github.com/hapijs/joi)
 * :bookmark_tabs: Logs for application and API calls with [winston](https://github.com/winstonjs/winston) & [morgan](https://github.com/expressjs/morgan)
 * :package: Extendable with [modules](modules.md) & [hooks](hooks.md)

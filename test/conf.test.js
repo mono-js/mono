@@ -87,7 +87,7 @@ test('Check conf with modules', async (t) => {
 		path: join(__dirname, './fixtures/conf/conf-modules/main-module/')
 	})
 	t.deepEqual(conf.mono.modules[4], {
-		name: 'terrajs',
+		name: 'mono-js',
 		path: join(__dirname, './fixtures/conf/conf-modules/no-main-module/')
 	})
 

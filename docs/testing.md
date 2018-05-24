@@ -1,6 +1,6 @@
 # Testing
 
-Mono is shipped with [mono-test-utils](https://github.com/terrajs/mono-test-utils), a powerful module to test your Mono API.
+Mono is shipped with [mono-test-utils](https://github.com/mono-js/mono-test-utils), a powerful module to test your Mono API.
 
 ```js
 const { start, stop, url, $get, $post, $put, $del } = require('mono-test-utils')

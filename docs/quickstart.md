@@ -6,7 +6,7 @@ You need [node](https://nodejs.org/) `>= 8.6.0` to use Mono since it uses native
 
 ## New project
 
-It is recommended to use [create-mono-app](https://github.com/terrajs/create-mono-app), which helps creating new Mono app in seconds:
+It is recommended to use [create-mono-app](https://github.com/mono-js/create-mono-app), which helps creating new Mono app in seconds:
 
 ```
 npx create-mono-app <my-mono-app>
@@ -94,7 +94,7 @@ You can take a look at the different file types documentation:
 
 #### test/
 
-An `api.test.js` file is generated in order to test the generated *hello* and *todos* resources, it uses [mono-test-utils](https://github.com/terrajs/mono-test-utils) to facilitate API tests with Mono.
+An `api.test.js` file is generated in order to test the generated *hello* and *todos* resources, it uses [mono-test-utils](https://github.com/mono-js/mono-test-utils) to facilitate API tests with Mono.
 
 ### Scripts
 

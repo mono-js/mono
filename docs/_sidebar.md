@@ -22,5 +22,5 @@
   - [Use programmatically](mono.md)
 
 - Mono
-  - [Releases](https://github.com/terrajs/mono/releases)
-  - [Contributors](https://github.com/terrajs/mono/graphs/contributors)
+  - [Releases](https://github.com/mono-js/mono/releases)
+  - [Contributors](https://github.com/mono-js/mono/graphs/contributors)

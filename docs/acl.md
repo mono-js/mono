@@ -2,7 +2,7 @@
 
 Most of the time, a REST API needs to protect resources by authentification access. Furthermore, some resources require to be protected from specific users, for example, admin routes.
 
-ACL are quite complicated to setup, and most of librairies do not meet specific needs of REST APIs. That's why we developed [Imperium](https://github.com/terrajs/imperium), which is quite generic and answer all of our needs. Imperium is fully integrated within Mono and provide users with powerful acls.
+ACL are quite complicated to setup, and most of librairies do not meet specific needs of REST APIs. That's why we developed [Imperium](https://github.com/mono-js/imperium), which is quite generic and answer all of our needs. Imperium is fully integrated within Mono and provide users with powerful acls.
 
 ## Usage
 
@@ -155,4 +155,4 @@ module.exports = [
 ]
 ```
 
-You can find the full documentation of Imperium [here](https://github.com/terrajs/imperium).
+You can find the full documentation of Imperium [here](https://github.com/mono-js/imperium).

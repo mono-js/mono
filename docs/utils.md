@@ -1,11 +1,19 @@
 # Utils
 
-Mono is shipped with useful utils:
+We created some utils to enhance your development with Mono:
+
+> We recommend to install the package, even if it's a dependency of Mono so you will have the last version of our utils.
+
+```bash
+npm install --save mono-utils
+```
+
+Then you can import them like this:
 
 ```js
-const { utils } = require('mono-core')
+const utils = require('mono-utils')
 // Or
-const { ok, cb, waitFor, ... } = require('mono-core/utils')
+const { ok, cb, waitFor, ... } = require('mono-utils')
 ```
 
 ## ok
@@ -141,6 +149,6 @@ const posts = await asyncForEach(users, async (user) => {
 
 We developed other utils that you might find useful:
 
-- [mongodb-utils](https://github.com/terrajs/mongodb-utils)
-- [elasticsearch-utils](https://github.com/terrajs/elasticsearch-utils)
-- [mono-test-utils](https://github.com/terrajs/mono-test-utils)
+- [mongodb-utils](https://github.com/mono-js/mongodb-utils)
+- [elasticsearch-utils](https://github.com/mono-js/elasticsearch-utils)
+- [mono-test-utils](https://github.com/mono-js/mono-test-utils)

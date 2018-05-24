@@ -53,7 +53,7 @@ module.exports = [
   Node environment (`NODE_ENV`) where the route should be defined (default to `'*'`). Useful to add routes for development and testing purpose.
 
 * `documentation` _(alias: `doc`)_<br>
-  Object to describe the route in order to be displayed in [mono-doc](https://github.com/terrajs/mono-doc). See documentation [here](documentation.md).
+  Object to describe the route in order to be displayed in [mono-doc](https://github.com/mono-js/mono-doc). See documentation [here](documentation.md).
 
 Example with `async`/`await`:
 

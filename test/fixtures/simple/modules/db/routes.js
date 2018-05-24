@@ -19,7 +19,7 @@ module.exports = [
 			if (!userFound) throw new HttpError('invalid-credentials', 401)
 			const token = await jwt.generateJWT({
 				userId: userFound.id,
-				admin: userFound.email === 'admin@terrajs.com'
+				admin: userFound.email === 'admin@mono-js.com'
 			})
 			const session = Object.assign({ token }, userFound)
 			res.json(session)

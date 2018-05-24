@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/terrajs/mono.git"
+    "url": "git+https://github.com/mono-js/mono.git"
   },
   "contributors": [
     {
@@ -55,6 +55,7 @@
     "joi-to-json-schema": "^3.3.0",
     "jsonwebtoken": "^8.2.1",
     "lodash": "^4.17.10",
+    "mono-utils": "^1.0.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.4",
     "sywac": "^1.2.0",

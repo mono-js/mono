@@ -4,7 +4,7 @@
 
 <p>:zap: Write any Web API in seconds :zap:</p>
 
-[GitHub](https://github.com/terrajs/mono)
+[GitHub](https://github.com/mono-js/mono)
 [Get Started](#mono)
 
 <!-- background color -->

@@ -104,8 +104,8 @@ test('GET - /validate -> 400', async (t) => {
 	t.is(body.context[0].field[0], 'email')
 	t.is(body.context[0].location, 'query')
 })
-test('GET - /validate?email=team@terrajs.com -> 200', async (t) => {
-	const { statusCode, body } = await $get('/validate?email=team@terrajs.com')
+test('GET - /validate?email=team@mono-js.com -> 200', async (t) => {
+	const { statusCode, body } = await $get('/validate?email=team@mono-js.com')
 	t.is(statusCode, 200)
 	t.is(body.valid, true)
 })

@@ -18,14 +18,14 @@
 		window.$docsify = {
 			search: 'auto',
 			name: '<img src="/mono.svg" height="120px">',
-			repo: 'https://github.com/terrajs/mono',
+			repo: 'https://github.com/mono-js/mono',
 			coverpage: true,
 			loadSidebar: true,
 			subMaxLevel: 2,
 			plugins: [
 				function (hook, vm) {
 					hook.beforeEach(function (html) {
-						var url = 'https://github.com/terrajs/mono/blob/master/docs/' + vm.route.file
+						var url = 'https://github.com/mono-js/mono/blob/master/docs/' + vm.route.file
 						var editHtml = '<p align="right"><small>[Edit this page on GitHub](' + url + ')</small></p>'
 						return html + '\n----\n' + editHtml
 					})

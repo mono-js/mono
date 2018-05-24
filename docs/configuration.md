@@ -94,7 +94,7 @@ module.exports = {
 }
 ```
 
-The last example shows an environment based configuration for the [mono-mongodb](https://github.com/terrajs/mono-mongodb) module.
+The last example shows an environment based configuration for the [mono-mongodb](https://github.com/mono-js/mono-mongodb) module.
 
 Here is the documentation for the configuration of the different Mono features:
 
