@@ -1,7 +1,7 @@
 const test = require('ava')
 const { join } = require('path')
 const { readFileSync } = require('fs')
-const { waitFor } = require('../utils')
+const { waitFor } = require('mono-utils')
 
 const { start, stop, stdMock, stdRestore, $get } = require('mono-test-utils')
 const monoPath = join(__dirname, '..')

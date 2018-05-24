@@ -3,7 +3,7 @@ const jsonwebtoken = require('jsonwebtoken')
 const { join } = require('path')
 const { start, stop, $get, $post } = require('mono-test-utils')
 
-const { cb } = require('../utils')
+const { cb } = require('mono-utils')
 const monoPath = join(__dirname, '..')
 
 let ctx
