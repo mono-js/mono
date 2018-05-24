@@ -23,7 +23,7 @@ test('Start the server and log whats happening', async (t) => {
 	t.true(stdout.includes('Server running on'))
 })
 
-test('GET /_ => @terrajs/mono', async (t) => {
+test('GET /_ => mono-core', async (t) => {
 	const { statusCode, body, stdout, stderr } = await $get('/_')
 
 	t.is(statusCode, 200)
@@ -37,11 +37,11 @@ test('GET /_ => @terrajs/mono', async (t) => {
 	t.true(stdout[0].includes('GET /_'))
 })
 
-test('GET /_ping => pong', async (t) => {
+test('GET /_ping => 200 OK', async (t) => {
 	const { statusCode, body, stdout, stderr } = await $get('/_ping')
 
 	t.is(statusCode, 200)
-	t.is(body, 'pong')
+	t.is(body, 'OK')
 	t.is(stderr.length, 0)
 	t.is(stdout.length, 1)
 	t.true(stdout[0].includes('GET /_ping'))
