@@ -23,11 +23,11 @@ test('Start the server on port -> ok', async (t) => {
 	t.is(output.stdout.length, 4)
 	t.is(output.stderr.length, 1)
 	// Check order
-	t.true(output.stdout[0].includes('[@terrajs/mono] Verbose message'))
-	t.true(output.stdout[1].includes('[@terrajs/mono] Debug message'))
-	t.true(output.stdout[2].includes('[@terrajs/mono] Info message'))
-	t.true(output.stdout[3].includes('[@terrajs/mono] Warning message'))
-	t.true(output.stderr[0].includes('[@terrajs/mono] Error message'))
+	t.true(output.stdout[0].includes('[mono-core] Verbose message'))
+	t.true(output.stdout[1].includes('[mono-core] Debug message'))
+	t.true(output.stdout[2].includes('[mono-core] Info message'))
+	t.true(output.stdout[3].includes('[mono-core] Warning message'))
+	t.true(output.stderr[0].includes('[mono-core] Error message'))
 
 	/*
 	** Profiling
@@ -36,7 +36,7 @@ test('Start the server on port -> ok', async (t) => {
 	log.profile('foo')
 	log.profile('foo')
 	output = stdRestore()
-	t.true(output.stdout[0].includes('[@terrajs/mono] foo durationMs='))
+	t.true(output.stdout[0].includes('[mono-core] foo durationMs='))
 
 	/*
 	** Simple use case with modules
@@ -53,11 +53,11 @@ test('Start the server on port -> ok', async (t) => {
 	t.is(output.stdout.length, 4)
 	t.is(output.stderr.length, 1)
 	// Check order
-	t.true(output.stdout[0].includes('[@terrajs/mono:ava] Verbose message'))
-	t.true(output.stdout[1].includes('[@terrajs/mono:ava] Debug message'))
-	t.true(output.stdout[2].includes('[@terrajs/mono:ava] Info message'))
-	t.true(output.stdout[3].includes('[@terrajs/mono:ava] Warning message'))
-	t.true(output.stderr[0].includes('[@terrajs/mono:ava] Error message'))
+	t.true(output.stdout[0].includes('[mono-core:ava] Verbose message'))
+	t.true(output.stdout[1].includes('[mono-core:ava] Debug message'))
+	t.true(output.stdout[2].includes('[mono-core:ava] Info message'))
+	t.true(output.stdout[3].includes('[mono-core:ava] Warning message'))
+	t.true(output.stderr[0].includes('[mono-core:ava] Error message'))
 
 	/*
 	** Stream property
@@ -67,7 +67,7 @@ test('Start the server on port -> ok', async (t) => {
 	t.is(typeof log.stream.write, 'function')
 	log.stream.write('foo')
 	output = stdRestore()
-	t.true(output.stdout[0].includes('[@terrajs/mono] foo'))
+	t.true(output.stdout[0].includes('[mono-core] foo'))
 
 	await stop(server)
 })

@@ -1,5 +1,5 @@
 {
-  "name": "@terrajs/mono",
+  "name": "mono-core",
   "version": "0.9.2",
   "description": "Framework to create monolithic REST API",
   "main": "lib/",
@@ -21,8 +21,8 @@
   },
   "scripts": {
     "lint": "eslint lib/ bin/ test/",
-    "test": "npm run lint && nyc ava --verbose --serial test/ && nyc report --reporter=html",
-    "t": "nyc ava --verbose --serial -fail-fast test/ && nyc report --reporter=html",
+    "test": "npm run lint && npm run t",
+    "t": "nyc ava --verbose --serial ---fail-fast test/ && nyc report --reporter=html",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "preversion": "npm test",
     "docs": "docsify serve ./docs"

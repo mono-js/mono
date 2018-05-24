@@ -9,7 +9,7 @@ ACL are quite complicated to setup, and most of librairies do not meet specific 
 You can use `imperium` anywhere in your code. You just have to require `mono`:
 
 ```js
-const { imperium } = require('@terrajs/mono')
+const { imperium } = require('mono-core')
 ```
 
 However, in order to simplify even more the work of developers, we created `.acl.js` files.
@@ -19,7 +19,7 @@ Mono will load automatically every acl files of your application in `src/**/*.ac
 Here is a basic example of an acl file:
 
 ```js
-const { imperium } = require('@terrajs/mono')
+const { imperium } = require('mono-core')
 
 imperium.role('admin', (req) => !!req.session.admin)
 imperium.role('user', async (req) => {

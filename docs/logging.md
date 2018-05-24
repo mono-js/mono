@@ -7,7 +7,7 @@ Logs are a must-have for any Web API. Mono integrates logging thanks to [winston
 You can use `log` anywhere in your code. You just have to require `mono`:
 
 ```js
-const { log } = require('@terrajs/mono')
+const { log } = require('mono-core')
 
 // Write on stdout
 log.verbose('This is a verbose message')

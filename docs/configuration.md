@@ -9,7 +9,7 @@ That's why Mono handles it for you with it's built-in configuration system.
 You can use `conf` anywhere in your code. You just have to require `mono`:
 
 ```js
-const { conf } = require('@terrajs/mono')
+const { conf } = require('mono-core')
 ```
 
 ## Structure

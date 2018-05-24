@@ -5,7 +5,7 @@ Mono can be used programmatically, it's really useful when integrating it with t
 Let's see what mono `exposes` as default:
 
 ```js
-const mono = require('@terrajs/mono')
+const mono = require('mono-core')
 ```
 
 Definition:
@@ -27,7 +27,7 @@ The context is an `object` with some useful properties:
 Example `server.js`:
 
 ```js
-const mono = require('@terrajs/mono')
+const mono = require('mono-core')
 
 mono(__dirname)
   .then((context) => {

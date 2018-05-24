@@ -3,9 +3,9 @@
 Mono is shipped with useful utils:
 
 ```js
-const { utils } = require('@terrajs/mono')
+const { utils } = require('mono-core')
 // Or
-const { ok, cb, waitFor, ... } = require('@terrajs/mono/utils')
+const { ok, cb, waitFor, ... } = require('mono-core/utils')
 ```
 
 ## ok
@@ -19,7 +19,7 @@ ok(promise: Object): Promise
 Example:
 
 ```js
-const { ok } = require('@terrajs/mono/utils')
+const { ok } = require('mono-core/utils')
 const { readFile } = require('fs-extra')
 
 // readFile sends back a Promise since we use fs-extra
@@ -39,7 +39,7 @@ cb(fn: Function, ...args: any[]): Promise
 Example:
 
 ```js
-const { ok } = require('@terrajs/mono/utils')
+const { ok } = require('mono-core/utils')
 const fs = require('fs')
 
 try {
@@ -60,7 +60,7 @@ waitFor(ms: number): Promise
 Example:
 
 ```js
-const { waitFor } = require('@terrajs/mono/utils')
+const { waitFor } = require('mono-core/utils')
 
 await waitFor(1000) // wait for 1s
 ```
@@ -76,7 +76,7 @@ waitForEvent(emitter: EventEmitter, eventName: string, timeout: number = -1): Pr
 Example:
 
 ```js
-const { waitFor } = require('@terrajs/mono/utils')
+const { waitFor } = require('mono-core/utils')
 
 await waitForEvent(sever, 'listen')
 ```
@@ -92,7 +92,7 @@ asyncObject(obj: Object): Promise<Object>
 Example:
 
 ```js
-const { asyncObject } = require('@terrajs/mono/utils')
+const { asyncObject } = require('mono-core/utils')
 
 const { pictures, comments, tweets } = await asyncObject({
   pictures: getPictures(),
@@ -114,7 +114,7 @@ asyncMap(array: Array, fn: Function): Promise<Array>
 Example:
 
 ```js
-const { asyncMap } = require('@terrajs/mono/utils')
+const { asyncMap } = require('mono-core/utils')
 
 const posts = await asyncMap([1, 2, 3], (id) => fetchPost(id))
 ```
@@ -130,7 +130,7 @@ asyncForEach(array: Array, fn: Function): Promise<void>
 Example:
 
 ```js
-const { asyncMap } = require('@terrajs/mono/utils')
+const { asyncMap } = require('mono-core/utils')
 
 const posts = await asyncForEach(users, async (user) => {
   await saveUser(user)

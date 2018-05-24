@@ -11,7 +11,7 @@ We strongly recommend to use the `session` property inside your [routes](/routes
 `src/sessions/sessions.routes.js`:
 
 ```js
-const { jwt } = require('@terrajs/mono')
+const { jwt } = require('mono-core')
 
 module.exports = [
   {
@@ -64,7 +64,7 @@ Mono offers a set of methods to create & decode JWT easily.
 ### jwt.generateJWT
 
 ```js
-const { jwt } = require('@terrajs/mono')
+const { jwt } = require('mono-core')
 
 jwt.generateJWT(session: object): Promise<string>
 ```
@@ -76,7 +76,7 @@ You can use [jwt conf](/sessions?id=configuration) to customize the token behavi
 #### Example:
 
 ```js
-const { jwt } = require('@terrajs/mono')
+const { jwt } = require('mono-core')
 
 const token = await jwt.generateJWT({ userId: 1, username: 'TerraJS' })
 ```
@@ -86,7 +86,7 @@ const token = await jwt.generateJWT({ userId: 1, username: 'TerraJS' })
 > This method is used internally intbyo Mono when you define `session: true` or `session: 'optional'` in your route declarations.
 
 ```js
-const { jwt } = require('@terrajs/mono')
+const { jwt } = require('mono-core')
 
 jwt.loadSession(req, [getJWT: function]): Promise<object>
 ```
@@ -96,7 +96,7 @@ jwt.loadSession(req, [getJWT: function]): Promise<object>
 #### Example:
 
 ```js
-const { jwt } = require('@terrajs/mono')
+const { jwt } = require('mono-core')
 
 const session = await jwt.loadSession(req)
 ```

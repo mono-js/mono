@@ -9,7 +9,7 @@ To help with security, it integrates by default [helmet](https://github.com/helm
 Custom error class (extends `Error`), used by Mono for API errors with status code and context.
 
 ```js
-const { HttpError } = require('@terrajs/mono') // Optional, Mono sets global.HttpError
+const { HttpError } = require('mono-core') // Optional, Mono sets global.HttpError
 
 new HttpError(message [, statusCode] [, context])
 ```
@@ -22,7 +22,7 @@ Arguments:
 Example:
 
 ```js
-const { HttpError } = require('@terrajs/mono')
+const { HttpError } = require('mono-core')
 
 throw new HttpError('file-not-found', 404, { path: '/tmp/my-file.txt' })
 ```

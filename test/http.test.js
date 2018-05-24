@@ -81,7 +81,7 @@ test('[env=production] Start the server in production, logLevel=combined', async
 
 	const { stdout } = await $get('/_')
 
-	t.true(stdout[0].includes('GET /_ HTTP/1.1" 200 61 "-" "-"'))
+	t.true(stdout[0].includes('GET /_ HTTP/1.1" 200 57 "-" "-"'))
 	await stop(ctx.server)
 })
 

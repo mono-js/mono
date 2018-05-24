@@ -2,7 +2,7 @@
 
 > Mono is an opinionated REST API Framework for Node.js based on Express.js
 
-[![npm version](https://img.shields.io/npm/v/@terrajs/mono.svg)](https://www.npmjs.com/package/@terrajs/mono)
+[![npm version](https://img.shields.io/npm/v/mono-core.svg)](https://www.npmjs.com/package/mono-core)
 [![Travis](https://img.shields.io/travis/terrajs/mono/master.svg)](https://travis-ci.org/terrajs/mono)
 [![Coverage](https://img.shields.io/codecov/c/github/terrajs/mono/master.svg)](https://codecov.io/gh/terrajs/mono)
 [![license](https://img.shields.io/github/license/terrajs/mono.svg)](https://github.com/terrajs/mono/blob/master/LICENSE.md)
