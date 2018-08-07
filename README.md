@@ -7,7 +7,11 @@
 [![Coverage](https://img.shields.io/codecov/c/github/mono-js/mono/master.svg)](https://codecov.io/gh/mono-js/mono)
 [![license](https://img.shields.io/github/license/mono-js/mono.svg)](https://github.com/mono-js/mono/blob/master/LICENSE)
 
-## Features
+## Documentation 📘
+
+[https://mono.js.org](https://mono.js.org)
+
+## Features ✨
 
 - Environment based config
 - API Versioning (`v1`, `v2`...)
@@ -18,7 +22,7 @@
 - Routes declaration via `src/**/*.routes.js`
 - Extendable with modules & hooks
 
-## Usage
+## Usage 🤸‍
 
 **INFO:** You need `node` >= `8.0.0` to use Mono since it uses native `async/await`
 
@@ -48,7 +52,7 @@ NODE_ENV=production npm start
 npm test
 ```
 
-## Official Modules
+## Official Modules 📦
 
 Mono offers a module system to plug any functionality in your project:
 
@@ -61,10 +65,10 @@ Mono offers a module system to plug any functionality in your project:
 - [mono-notifications](https://github.com/mono-js/mono-notifications)
 - [mono-doc](https://github.com/mono-js/mono-doc)
 
-## Credits
+## Credits 🙏
 
 Logo created by Frederick Allen from the Noun Project.
 
-## License
+## License 👀
 
 MIT &copy; [mono-js](https://github.com/mono-js)
